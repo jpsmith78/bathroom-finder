@@ -9,7 +9,38 @@
   </head>
   <body ng-controller="BathroomController as ctrl">
     <div ng-controller="AuthController as auth">
-      <!-- auth stuff here -->
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
+        <script src="/js/app.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="css/app.css">
+        <meta charset="utf-8">
+        <title>Bathrm</title>
+      </head>
+
+      <body ng-controller="BathroomController as ctrl">
+        <div ng-controller="AuthController as auth">
+          <!-- auth stuff here -->
+
+          <div class="createUserForm">
+            <form ng-submit='auth.createUser()'>
+              <input type="text" placeholder="username" ng-model='auth.username'>
+              <input type="password" placeholder="password" ng-model='auth.password'>
+              <input type="text" placeholder="current city" ng-model= 'auth.city'>
+              <button type='submit'>create</button>
+            </form>
+          </div>
+
+          <div class="logInForm">
+            <form  ng-submit='auth.logIn()'>
+              <input type="text" placeholder="username" ng-model='auth.username'>
+              <input type="password" placeholder="password" ng-model='auth.password'>
+              <button type='submit'>Login to app</button>
+            </form>
+          </div>
+          <div ng-if='auth.loggedIn' class="logout">
+            <button ng-click='auth.logout()'>log out</button>
+          </div>
+        </div>
       </div>
           <h1>Bathroom Finder</h1>
 

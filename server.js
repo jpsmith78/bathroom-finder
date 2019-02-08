@@ -2,10 +2,9 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
-
 const mongoose = require('mongoose');
-
 const session = require('express-session');
+
 app.use(express.json());
 app.use(express.static('public'));
 
