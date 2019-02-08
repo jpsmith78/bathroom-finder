@@ -1,59 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="BathroomApp">
-
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
-  <script src="/js/app.js" charset="utf-8"></script>
-  <link rel="stylesheet" href="css/app.css">
-  <meta charset="utf-8">
-  <title>Bathrm</title>
-</head>
-
-<body ng-controller="BathroomController as ctrl">
-  <div ng-controller="AuthController as auth">
-    <!-- auth stuff here -->
-
-    <div class="createUserForm">
-      <form ng-submit='auth.createUser()'>
-        <input type="text" placeholder="username" ng-model='auth.username'>
-        <input type="password" placeholder="password" ng-model='auth.password'>
-        <input type="text" placeholder="current city" ng-model= 'auth.city'>
-        <button type='submit'>create</button>
-      </form>
-    </div>
-
-    <div class="logInForm">
-      <form  ng-submit='auth.logIn()'>
-        <input type="text" placeholder="username" ng-model='auth.username'>
-        <input type="password" placeholder="password" ng-model='auth.password'>
-        <button type='submit'>Login to app</button>
-      </form>
-    </div>
-    <div ng-if='auth.loggedIn' class="logout">
-      <button ng-click='auth.logout()'>log out</button>
-    </div>
-  </div>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <meta charset="utf-8">
+    <title>Bathrm</title>
+  </head>
+  <body ng-controller="BathroomController as ctrl">
+    <div ng-controller="AuthController as auth">
+      <!-- auth stuff here -->
+      </div>
+          <h1>Bathroom Finder</h1>
 
 
-  <h1>Bathroom Finder</h1>
 
-  <h1>Add Info</h1>
-  <form ng-submit="ctrl.createBathroom()">
-    <input type="text" ng-model="ctrl.name" placeholder="name">
-    <input type="text" ng-model="ctrl.location" placeholder="location">
-    Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
-    Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
-    Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
-    <input type="submit" value="Create Entry">
-  </form>
+            <h1>Add Info</h1>
+            <form ng-submit="ctrl.createBathroom()">
+              <input type="text" ng-model="ctrl.name" placeholder="name">
+              <input type="text" ng-model="ctrl.location" placeholder="location">
+              Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
+              Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
+              Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
+              <input type="submit"  value="Create Entry">
+            </form>
 
-  <ul>
-    <li ng-repeat='bathroom in ctrl.bathrooms'>{{bathroom.name}}</li>
-  </ul>
+        <ul ng-repeat='bathroom in ctrl.bathrooms'>
+          <li>{{bathroom.name}}</li>
+          <li>{{bathroom.location}}</li>
+          <li ng-if="bathroom.haveToPurchase">You Have to Buy Something</li>
+          <li ng-if="!bathroom.haveToPurchase">You Have to Buy Something</li>
+          <li ng-if="bathroom.isAwkward">You may have to speak to an employee</li>
+          <li ng-if="!bathroom.isAwkward">You won't have to talk to anybody</li>
+          <li ng-if="bathroom.isClean">Clean!</li>
+          <li ng-if="!bathroom.isClean">Not Clean!</li>
+        </ul>
 
-  <h1>Bathroom Finder</h1>
-  <h1>{{bathroom.boo}}</h1>
 
-</body>
 
+  </body>
 </html>

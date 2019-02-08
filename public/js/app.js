@@ -73,8 +73,14 @@ const controller = this;
       controller.getBathrooms()
     }, function(err){
       console.log(err);
-    })
+    });
+  };
+
+  this.includePath = 'partials/sidebar.html';
+  this.changeInclude = (path) => {
+  this.includePath = 'partials/'+ path +'.html';
   }
+
 }]);
 
 // authController
