@@ -108,7 +108,8 @@ app.controller('AuthController',['$http',function($http){
 
     }).then(function(res){
        if(res.data.user){
-          console.log(res);
+          console.log('your still logged in bro');
+
        }
     })
   }

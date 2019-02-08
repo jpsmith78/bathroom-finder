@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Bathroom = require('../models/users.js')
+const User = require('../models/users.js')
 const bcrypt = require ('bcrypt')
 
 
@@ -15,14 +15,16 @@ router.delete('/',(req,res) => {
 })
 
 router.post('/', (req, res)=>{
-    Bathroom.findOne({username:req.body.username}, (err, foundUser)=>{
+    User.findOne({username:req.body.username}, (err, foundUser)=>{
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.user = foundUser
+            console.log('you logged in')
             res.status(201).json({
               status:201,
               message: 'created!'
             });
         } else {
+            console.log('wrong password');
             res.status(401).json({
               status: 401,
               message: 'unauthorized'

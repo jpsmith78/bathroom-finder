@@ -30,6 +30,12 @@ app.listen(3000, () => {
   console.log('Listening...');
 });
 
+
+app.get('/checkIfLoggedIn',(req,res) => {
+  res.json(req.session)
+})
+
+
 mongoose.connect('mongodb://localhost:27017/project_3', {useNewUrlParser: true});
 mongoose.connection.once('open', () => {
   console.log('connected to mongoose');

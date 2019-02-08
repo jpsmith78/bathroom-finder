@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="BathroomApp">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
-    <script src="/js/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/app.css">
-    <meta charset="utf-8">
-    <title>Bathrm</title>
-  </head>
-  <body ng-controller="BathroomController as ctrl">
-    <div ng-controller="AuthController as auth">
-      <!-- auth stuff here -->
-      </div>
-          <h1>Bathroom Finder</h1>
 
-            <h1>Add Info</h1>
-            <form ng-submit="ctrl.createBathroom()">
-              <input type="text" ng-model="ctrl.name" placeholder="name">
-              <input type="text" ng-model="ctrl.location" placeholder="location">
-              Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
-              Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
-              Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
-              <input type="submit"  value="Create Entry">
-            </form>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
+  <script src="/js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/app.css">
+  <meta charset="utf-8">
+  <title>Bathrm</title>
+</head>
 
-        <ul>
-          <li ng-repeat='bathroom in ctrl.bathrooms'>{{bathroom.name}}</li>
-        </ul>
+<body ng-controller="BathroomController as ctrl">
+  <div ng-controller="AuthController as auth">
+    <!-- auth stuff here -->
 
-    <h1>Bathroom Finder</h1>
-     <h1>{{bathroom.boo}}</h1>
+    <div class="createUserForm">
+      <form ng-submit='auth.createUser()'>
+        <input type="text" placeholder="username" ng-model='auth.username'>
+        <input type="password" placeholder="password" ng-model='auth.password'>
+        <input type="text" placeholder="current city" ng-model= 'auth.city'>
+        <button type='submit'>create</button>
+      </form>
+    </div>
 
-  </body>
+    <div class="logInForm">
+      <form  ng-submit='auth.logIn()'>
+        <input type="text" placeholder="username" ng-model='auth.username'>
+        <input type="password" placeholder="password" ng-model='auth.password'>
+        <button type='submit'>Login to app</button>
+      </form>
+    </div>
+    <div ng-if='auth.loggedIn' class="logout">
+      <button ng-click='c.logout()'>log out</button>
+    </div>
+  </div>
+
+
+  <h1>Bathroom Finder</h1>
+
+  <h1>Add Info</h1>
+  <form ng-submit="ctrl.createBathroom()">
+    <input type="text" ng-model="ctrl.name" placeholder="name">
+    <input type="text" ng-model="ctrl.location" placeholder="location">
+    Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
+    Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
+    Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
+    <input type="submit" value="Create Entry">
+  </form>
+
+  <ul>
+    <li ng-repeat='bathroom in ctrl.bathrooms'>{{bathroom.name}}</li>
+  </ul>
+
+  <h1>Bathroom Finder</h1>
+  <h1>{{bathroom.boo}}</h1>
+
+</body>
+
 </html>
