@@ -3,16 +3,15 @@ const router = express.Router()
 const User = require('../models/users.js')
 const bcrypt = require ('bcrypt')
 
-
-
-router.delete('/',(req,res) => {
-  req.session.destory(() => {
-    res.staus(200).json({
-      status:200,
-      message: 'Logout complete'
+router.delete('/', (req, res)=>{
+    req.session.destroy(() => {
+        res.status(200).json({
+          status:200,
+          message: 'Logout complete'
+        })
     })
-  })
-})
+});
+
 
 router.post('/', (req, res)=>{
     User.findOne({username:req.body.username}, (err, foundUser)=>{
