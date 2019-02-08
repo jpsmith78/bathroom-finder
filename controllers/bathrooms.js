@@ -2,11 +2,20 @@ const express = require ('express')
 const router = express.Router()
 const Bathroom = require ('../models/bathrooms.js')
 
+
+
+router.get('/',(req,res) => {
+  Bathroom.find({},(err,foundBathroom) => {
+    res.json(foundBathroom)
+  })
+})
+
 router.post('/',(req,res) => {
   Bathroom.create(req.body,(error,createdBathroom) => {
     if(error){
       res.json(error)
     } else{
+      console.log(createdBathroom);
       res.json(createdBathroom)
     }
   })

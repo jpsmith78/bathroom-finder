@@ -33,7 +33,8 @@ this.boo = 'far'
       method: 'GET',
       url: '/bathrooms'
     }).then(function(res){
-      controller.bathrooms = response.data
+      controller.bathrooms = res.data
+      console.log(controller.bathrooms);
     }, function(err){
       console.log(err);
     });

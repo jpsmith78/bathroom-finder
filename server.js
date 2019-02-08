@@ -22,7 +22,7 @@ const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController);
 
 const userController = require('./controllers/users.js');
-app.use('./users', userController);
+app.use('/users', userController);
 
 //==========Connections==========//
 
