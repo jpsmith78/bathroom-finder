@@ -15,7 +15,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
-const bathroomController = require('./controllers/bathroom.js');
+const bathroomController = require('./controllers/bathrooms.js');
 app.use('/bathrooms', bathroomController);
 
 const sessionsController = require('./controllers/sessions.js');
