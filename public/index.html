@@ -29,12 +29,15 @@
           <li>{{bathroom.name}}</li>
           <li>{{bathroom.location}}</li>
           <li ng-if="bathroom.haveToPurchase">You Have to Buy Something</li>
-          <li ng-if="!bathroom.haveToPurchase">You Have to Buy Something</li>
+          <li ng-if="!bathroom.haveToPurchase">You Don't Have to Buy Something</li>
           <li ng-if="bathroom.isAwkward">You may have to speak to an employee</li>
           <li ng-if="!bathroom.isAwkward">You won't have to talk to anybody</li>
           <li ng-if="bathroom.isClean">Clean!</li>
           <li ng-if="!bathroom.isClean">Not Clean!</li>
         </ul>
+        <div>
+          <nav ng-include="ctrl.includePath"></nav>
+        </div>
 
 
 

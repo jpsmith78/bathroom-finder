@@ -7,9 +7,12 @@ app.controller('BathroomController', ['$http', function($http){
 
 //declare controller as this
 const controller = this;
+this.includePath = '/partials/sidebar.html';
 
 //==========Create Bathroom Function==========//
   this.createBathroom = function(){
+
+
     $http({
       method: 'POST',
       url: '/bathrooms',
@@ -76,10 +79,7 @@ const controller = this;
     });
   };
 
-  this.includePath = 'partials/sidebar.html';
-  this.changeInclude = (path) => {
-  this.includePath = 'partials/'+ path +'.html';
-  }
+
 
 }]);
 
