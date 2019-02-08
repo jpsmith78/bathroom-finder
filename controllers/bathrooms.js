@@ -1,5 +1,5 @@
 const express = require ('express')
-const router = express.router()
+const router = express.Router()
 const Bathroom = require ('../models/bathrooms.js')
 
 router.post('/',(req,res) => {
