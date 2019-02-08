@@ -1,5 +1,5 @@
 //create app name
-const app = augular.module('BathroomApp', []);
+const app = angular.module('BathroomApp', []);
 
 
 //==========Bathroom Controller==========//
@@ -7,7 +7,7 @@ app.controller('BathroomController', ['$http', function($http){
 
 //declare controller as this
   const controller = this;
-
+this.boo = 'far'
 //==========Create Bathroom Function==========//
   this.createBathroom = function(){
     $http({
