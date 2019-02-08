@@ -1,5 +1,5 @@
 const app = angular.module('BathroomApp',[])
-app.controller = ('authController',['$http',function($http){
+app.controller('authController',['$http',function($http){
   const controller = this
 
 
