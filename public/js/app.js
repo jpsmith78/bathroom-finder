@@ -86,7 +86,7 @@ const controller = this;
 // authController
 app.controller('AuthController',['$http',function($http){
   const controller = this
-
+  this.loggedIn = false
 
   this.createUser = function(){
     $http({
@@ -114,7 +114,8 @@ app.controller('AuthController',['$http',function($http){
 
     }).then(function(res){
        if(res.data.user){
-          console.log(res);
+          console.log('your still logged in bro');
+          controller.loggedIn = true
        }
     })
   }
@@ -132,12 +133,13 @@ app.controller('AuthController',['$http',function($http){
         password: this.password
       }
     }).then(function(res){
+      controller.loggedIn = true
       controller.checkIfLoggedIn()
+
     },function(err){
       console.log(err);
     })
   }
-
 
   this.logout = () => {
     $http({
@@ -145,8 +147,7 @@ app.controller('AuthController',['$http',function($http){
       url: '/sessions'
     }).then(function(res){
        controller.loggedIn = false
-    });
-  };
+    })
+  }
 
-
-}]);
+}])
