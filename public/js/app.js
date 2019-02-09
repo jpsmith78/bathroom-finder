@@ -168,3 +168,40 @@ app.controller('AuthController',['$http',function($http){
   }
 
 }])
+
+
+
+app.controller('mapsController', ['$http', function($http){
+this.changeLocation = () => {
+
+mapLocation = 
+initMap()
+}
+
+
+
+
+
+
+
+}])
+
+
+let mapLocation
+
+
+function initMap() {
+      var myLatLng = mapLocation
+
+      var map = new google.maps.Map(document.getElementById('maping'), {
+        zoom: 4,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!',
+
+      });
+}

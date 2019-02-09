@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="BathroomApp">
-  <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
-        <script src="/js/app.js" charset="utf-8"></script>
 
-        <link rel="stylesheet" href="css/app.css">
-        <meta charset="utf-8">
-        <title>Bathrm</title>
-      </head>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
+  <script src="/js/app.js" charset="utf-8"></script>
 
-      <body ng-controller="BathroomController as ctrl">
-        <div ng-controller="AuthController as auth">
-          <!-- auth stuff here -->
+  <link rel="stylesheet" href="css/app.css">
+  <meta charset="utf-8">
 
-          <div class="nav-bar">
-            <h1>Bathroom Finder</h1>
-            <div class="createUserForm">
-              <form ng-submit='auth.createUser()'>
-                <input type="text" placeholder="username" ng-model='auth.username'>
-                <input type="password" placeholder="password" ng-model='auth.password'>
-                <input type="text" placeholder="current city" ng-model= 'auth.city'>
-                <button type='submit'>create</button>
-              </form>
-            </div>
+  <title>Bathrm</title>
+</head>
 
-            <div class="logInForm">
-              <form  ng-submit='auth.logIn()'>
-                <input type="text" placeholder="username" ng-model='auth.username'>
-                <input type="password" placeholder="password" ng-model='auth.password'>
-                <button type='submit'>Login to app</button>
-              </form>
-            </div>
-            <div ng-if='auth.loggedIn' class="logout">
-              <button ng-click='auth.logout()'>log out</button>
-            </div>
-          </div>
+<body>
+  <div ng-controller="BathroomController as ctrl">
+
+
+    <div ng-controller="AuthController as auth">
+      <!-- auth stuff here -->
+
+      <div class="nav-bar">
+        <h1>Bathroom Finder</h1>
+        <div class="createUserForm">
+          <form ng-submit='auth.createUser()'>
+            <input type="text" placeholder="username" ng-model='auth.username'>
+            <input type="password" placeholder="password" ng-model='auth.password'>
+            <input type="text" placeholder="current city" ng-model='auth.city'>
+            <button type='submit'>create</button>
+          </form>
         </div>
-          </div>
+
+        <div class="logInForm">
+          <form ng-submit='auth.logIn()'>
+            <input type="text" placeholder="username" ng-model='auth.username'>
+            <input type="password" placeholder="password" ng-model='auth.password'>
+            <button type='submit'>Login to app</button>
+          </form>
+        </div>
+        <div ng-if='auth.loggedIn' class="logout">
+          <button ng-click='auth.logout()'>log out</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
 
-          <div class="create">
-            <h1>Add Info</h1>
-            <form ng-submit="ctrl.createBathroom()">
-              <input type="text" ng-model="ctrl.name" placeholder="name">
-              <input type="text" ng-model="ctrl.location" placeholder="location">
-              Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
-              Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
-              Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
-              <input type="submit"  value="Create Entry">
-            </form>
-          </div>
+  <div class="create">
+    <h1>Add Info</h1>
+    <form ng-submit="ctrl.createBathroom()">
+      <input type="text" ng-model="ctrl.name" placeholder="name">
+      <input type="text" ng-model="ctrl.location" placeholder="location">
+      Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
+      Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
+      Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
+      <input type="submit" value="Create Entry">
+    </form>
+  </div>
 
-        <!-- <ul ng-repeat='bathroom in ctrl.bathrooms'>
+  <!-- <ul ng-repeat='bathroom in ctrl.bathrooms'>
           <li>{{bathroom.name}}</li>
           <li>{{bathroom.location}}</li>
           <li ng-if="bathroom.haveToPurchase">You Have to Buy Something</li>
@@ -64,16 +69,43 @@
           <li ng-if="!bathroom.isClean">Not Clean!</li>
         </ul> -->
 
-        </div>
-        <div class="sidebar">
-          <h2>Cities</h2>
-          <nav ng-include="'partials/sidebar.html'"></nav>
-        </div>
-        <div  class="content" ng-include="ctrl.includePath">
- <!-- map insert starts here -->
-   <div id="map">
+  </div>
+  <div class="sidebar">
+    <h2>Cities</h2>
+    <nav ng-include="'partials/sidebar.html'"></nav>
+  </div>
+  <div class="content" ng-include="ctrl.includePath">
+  </div>
+  <!-- map insert starts here -->
 
-   </div>
+  <!-- controller stops here -->
+  <div ng-controller="mapsController as map">
+    <style>
+      #maping {
+        height: 500px;
+        width: 500px;
+        margin: 5% auto;
+      }
+    </style>
 
-  </body>
+    <div class="map">
+      <div id="maping"> </div>
+
+
+
+<button ng-click="map.changeLocation()">
+
+</button>
+
+
+
+
+    </div>
+
+  </div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ4_z4_6m1w4sqpVKUeV5Og4dqPZH7tpU&callback=initMap">
+  </script>
+
+</body>
+
 </html>
