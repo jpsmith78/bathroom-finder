@@ -123,23 +123,6 @@ app.controller('AuthController',['$http',function($http){
       console.log(er);
     })
   }
-// checks if a user is logged in need route for for this in server.js
-
-  this.checkIfLoggedIn = () => {
-    $http({
-      method: "GET",
-      url: '/checkIfLoggedIn'
-
-    }).then(function(res){
-       if(res.data.user){
-          console.log('your still logged in bro');
-          controller.loggedIn = true
-       }
-    })
-  }
-
-  this.checkIfLoggedIn()
-
 
 
   this.logIn = function(){
@@ -152,7 +135,7 @@ app.controller('AuthController',['$http',function($http){
       }
     }).then(function(res){
       console.log(res);
-      controller.loggedIn = true
+      controller.loggedIn = res.data.username
       controller.checkIfLoggedIn()
 
     },function(err){
@@ -168,5 +151,24 @@ app.controller('AuthController',['$http',function($http){
        controller.loggedIn = false
     })
   }
+
+  // checks if a user is logged in need route for for this in server.js
+
+    this.checkIfLoggedIn = () => {
+      $http({
+        method: "GET",
+        url: '/checkIfLoggedIn'
+
+      }).then(function(res){
+         if(res.data.user){
+            console.log('your still logged in bro');
+            controller.loggedIn = true;
+            controller.username = res.data.user.username
+            console.log(res.data);
+         }
+      })
+    }
+
+    this.checkIfLoggedIn()
 
 }])
