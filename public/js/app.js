@@ -1,3 +1,5 @@
+const bathroomLocations = []
+//delclaring empty array to add locations for markers in
 
 
 //create app name
@@ -48,20 +50,34 @@ this.changeInclude = (path) => {
   };
 
 //==========Get Bathrooms Function==========//
+
+
   this.getBathrooms = function(){
     $http({
       method: 'GET',
       url: '/bathrooms'
     }).then(function(res){
       controller.bathrooms = res.data
-      console.log(controller.bathrooms);
+
+      for (var i = 0; i < controller.bathrooms.length; i++) {
+
+        bathroomLocations.push(res.data[i].location)
+
+      }
+
+
+
     }, function(err){
       console.log(err);
     });
   };
 
+
+
 //Call getBathrooms on page load
   this.getBathrooms();
+
+
 
 
 //==========Delete Bathroom Function==========//
@@ -170,27 +186,75 @@ app.controller('AuthController',['$http',function($http){
 }])
 
 
-
 app.controller('mapsController', ['$http', function($http){
 // setting api request url variables
 const controller = this
 this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
-this.address = "1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+this.address = ""
 this.apiKey="key=AIzaSyCXA92VRo9IXTiXf1jBLI_KDE9lLefHrl8"
-this.location =
+this.location = 'United States'
 
-this.createBathroomResponseLocation = function(){
+
+
+
+//setting the location of the map based on click
+
+
+this.setMapAsPhiladelphia = () => {
+  this.address = 'Philadelphia'
+  this.getLocationForPresetCitiesInLatAndLong()
+}
+this.setMapAsNewYork = () => {
+  this.address = 'New york city'
+  this.getLocationForPresetCitiesInLatAndLong()
+}
+this.setMapAsBoston = () => {
+  this.address = 'Boston MA'
+  this.getLocationForPresetCitiesInLatAndLong()
+}
+this.setMapAsLosAngles = () => {
+  this.address = 'LA california'
+  this.getLocationForPresetCitiesInLatAndLong()
+}
+this.setMapAsDenver = () => {
+  this.address = 'Denver'
+  this.getLocationForPresetCitiesInLatAndLong()
+}
+this.setMapAsPittsburgh = () => {
+  this.address = 'pittsburgh'
+  this.getLocationForPresetCitiesInLatAndLong()
+}
+
+
+
+// this fuction is use to convert user input addres into lat and log for markers
+this.getLocationForPresetCitiesInLatAndLong = function(){
 
   $http({
     method: "GET",
     url: controller.baseURL + 'address=' + controller.address + '&' + controller.apiKey
 }).then(function(res){
   controller.location = res.data.results[0].geometry.location;
+  console.log(controller.location);
+  controller.changeLocation()
 })
 
 }
 
 
+
+this.getLatAndLongForBathroomLocations = function(){
+  setTimeout(function(){ console.log(bathroomLocations); }, 5000);
+
+  $http({
+      method: "GET",
+      url: controller.baseURL + 'address=' + 'pittsburgh' + '&' + controller.apiKey
+    }).then(function(res){
+      console.log(res);
+    })
+
+}
+this.getLatAndLongForBathroomLocations()
 
 
 this.changeLocation = () => {
@@ -198,12 +262,6 @@ this.changeLocation = () => {
 mapLocation = this.location
 initMap()
 }
-
-
-
-
-
-
 
 }])
 
@@ -215,10 +273,10 @@ function initMap() {
       var myLatLng = mapLocation
 
       var map = new google.maps.Map(document.getElementById('maping'), {
-        zoom: 4,
+        zoom: 15,
         center: myLatLng
       });
-
+      // for loop here for locations in log
       var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,

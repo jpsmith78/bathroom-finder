@@ -17,8 +17,7 @@
 
     <div ng-controller="AuthController as auth">
       <!-- auth stuff here -->
-
-      <div class="nav-bar">
+<div class="nav-bar">
         <h1>Bathroom Finder</h1>
         <div class="createUserForm">
           <form ng-submit='auth.createUser()'>
@@ -41,7 +40,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 
 
 
@@ -56,6 +55,7 @@
       Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
       <input type="submit" value="Create Entry">
     </form>
+  </div>
   </div>
 
   <!-- <ul ng-repeat='bathroom in ctrl.bathrooms'>
@@ -94,10 +94,19 @@
 
 
 <button ng-click="map.changeLocation()">
-
 </button>
+<button ng-click = 'map.setMapAsPhiladelphia()' name="button">pittsburgh</button>
+<button ng-click = 'map.setMapAsNewYork()' name="button">Ny</button>
+<button ng-click = 'map.setMapAsBoston()' name="button">Boston</button>
+<button ng-click = 'map.setMapAsPittsburgh()' name="button">Pittt</button>
+<button ng-click = 'map.setMapAsLosAngles()' name="button">LA</button>
+<button ng-click = 'map.setMapAsDenver()' name="button">Denver</button>
 
-<button ng-click = 'map.createBathroomResponseLocation()'>adfajdkfjakdjfkdfjddfjkdfkj</button>
+
+
+
+
+
 
 
     </div>
