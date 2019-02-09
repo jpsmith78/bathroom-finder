@@ -1,13 +1,27 @@
+
+
 //create app name
 const app = angular.module('BathroomApp', []);
 
-
 //==========Bathroom Controller==========//
 app.controller('BathroomController', ['$http', function($http){
+// api key for google maps
+const controller = this;
+
+
 
 //declare controller as this
-const controller = this;
+
 this.includePath = '/partials/sidebar.html';
+
+//function to initizlize map
+
+
+
+
+
+
+
 
 //==========Create Bathroom Function==========//
   this.createBathroom = function(){
