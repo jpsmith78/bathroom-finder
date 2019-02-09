@@ -15,7 +15,7 @@
 
           <div class="nav-bar">
             <h1>Bathroom Finder</h1>
-            <div class="createUserForm">
+            <div ng-hide="auth.loggedIn" class="createUserForm">
               <form ng-submit='auth.createUser()'>
                 <input type="text" placeholder="username" ng-model='auth.username'>
                 <input type="password" placeholder="password" ng-model='auth.password'>
@@ -24,7 +24,7 @@
               </form>
             </div>
 
-            <div class="logInForm">
+            <div ng-hide="auth.loggedIn" class="logInForm">
               <form  ng-submit='auth.logIn()'>
                 <input type="text" placeholder="username" ng-model='auth.username'>
                 <input type="password" placeholder="password" ng-model='auth.password'>
