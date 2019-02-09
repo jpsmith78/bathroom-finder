@@ -13,6 +13,7 @@ body {
   width: 100%;
   z-index: 999;
   background: black;
+  opacity: .6;
 }
 
 .sidebar {
@@ -21,7 +22,7 @@ body {
   width: 100px;
   position: fixed;
   z-index: 999;
-  top: 118px;
+  top: 138px;
   left: 0;
   overflow: hidden;
   padding-top: 20px;
@@ -34,10 +35,15 @@ body {
 
 .content {
   text-align: center;
+  margin-top: 150px;
 }
 
 .nav-bar > h1 {
   color: white;
+}
+
+.home {
+  text-align: center;
 }
 
 .create {
