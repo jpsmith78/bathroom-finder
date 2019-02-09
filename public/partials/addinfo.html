@@ -1,5 +1,5 @@
 <h1>Add Info</h1>
-<form ng-submit="ctrl.createBathroom()">
+<form ng-show="auth.loggedIn" ng-submit="ctrl.createBathroom()">
   <input type="text" ng-model="ctrl.name" placeholder="name">
   <!-- <input type="text" ng-model="ctrl.location" placeholder="location"> -->
   <select ng-model="ctrl.location" placeholder="location">
