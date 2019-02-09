@@ -9,8 +9,8 @@
         <title>Bathrm</title>
       </head>
 
-      <body ng-controller="AuthController as auth">
-        <div>
+      <body ng-controller="BathroomController as ctrl">
+        <div ng-controller="AuthController as auth">
           <!-- auth stuff here -->
 
           <div class="nav-bar">
@@ -40,7 +40,7 @@
 
 
 
-          <div class="content" ng-controller="BathroomController as ctrl">
+          <div class="content">
             <div  class="content" ng-include="ctrl.includePath"></div>
           </div>
           <!-- <div class="create">
