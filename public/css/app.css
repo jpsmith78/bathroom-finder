@@ -1,7 +1,46 @@
 body {
   background: yellow;
+
 }
 
 #map{
-  100%
+  100%;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: black;
+}
+
+.sidebar {
+  background: white;
+  height: 90%;
+  width: 100px;
+  position: fixed;
+  z-index: 999;
+  top: 118px;
+  left: 0;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.sidebar > h2 {
+  text-decoration: underline;
+
+}
+
+.content {
+  text-align: center;
+}
+
+.nav-bar > h1 {
+  color: white;
+}
+
+.create {
+  text-align: center;
+  padding-top: 100px;
 }

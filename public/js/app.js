@@ -13,6 +13,9 @@ const controller = this;
 //declare controller as this
 
 this.includePath = '/partials/sidebar.html';
+this.changeInclude = (path) => {
+  this.includePath = 'partials/'+ path +'.html';
+};
 
 //function to initizlize map
 
