@@ -1,6 +1,8 @@
 <h1>New York</h1>
 
-<div class="create">
+<div ng-include="'partials/addinfo.html'"></div>
+
+<!-- <div class="create">
   <h1>Add Info</h1>
   <form ng-submit="ctrl.createBathroom()">
     <input type="text" ng-model="ctrl.name" placeholder="name">
@@ -15,4 +17,4 @@
 <ul ng-repeat="bathroom in ctrl.bathrooms">
   Bathroom Name: <li>{{bathroom.name}}</li>
   Bathroom Location: <li>{{bathroom.location}}</li>
-</ul>
+</ul> -->
