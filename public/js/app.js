@@ -12,7 +12,7 @@ const controller = this;
 
 //declare controller as this
 
-this.includePath = '/partials/sidebar.html';
+this.includePath = '/partials/home.html';
 this.changeInclude = (path) => {
   this.includePath = 'partials/'+ path +'.html';
 };
@@ -150,6 +150,7 @@ app.controller('AuthController',['$http',function($http){
         password: this.password
       }
     }).then(function(res){
+      console.log(res);
       controller.loggedIn = true
       controller.checkIfLoggedIn()
 

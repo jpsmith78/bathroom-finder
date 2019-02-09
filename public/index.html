@@ -9,8 +9,8 @@
         <title>Bathrm</title>
       </head>
 
-      <body ng-controller="BathroomController as ctrl">
-        <div ng-controller="AuthController as auth">
+      <body ng-controller="AuthController as auth">
+        <div>
           <!-- auth stuff here -->
 
           <div class="nav-bar">
@@ -36,12 +36,14 @@
             </div>
           </div>
         </div>
+          <!-- </div> -->
+
+
+
+          <div class="content" ng-controller="BathroomController as ctrl">
+            <div  class="content" ng-include="ctrl.includePath"></div>
           </div>
-
-
-
-
-          <div class="create">
+          <!-- <div class="create">
             <h1>Add Info</h1>
             <form ng-submit="ctrl.createBathroom()">
               <input type="text" ng-model="ctrl.name" placeholder="name">
@@ -51,7 +53,7 @@
               Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
               <input type="submit"  value="Create Entry">
             </form>
-          </div>
+          </div> -->
 
         <!-- <ul ng-repeat='bathroom in ctrl.bathrooms'>
           <li>{{bathroom.name}}</li>
@@ -64,12 +66,10 @@
           <li ng-if="!bathroom.isClean">Not Clean!</li>
         </ul> -->
 
-        </div>
+        <!-- </div> -->
         <div class="sidebar">
           <h2>Cities</h2>
           <nav ng-include="'partials/sidebar.html'"></nav>
-        </div>
-        <div  class="content" ng-include="ctrl.includePath">
  <!-- map insert starts here -->
    <div id="map">
 
