@@ -1,7 +1,15 @@
 <h1>Add Info</h1>
 <form ng-submit="ctrl.createBathroom()">
   <input type="text" ng-model="ctrl.name" placeholder="name">
-  <input type="text" ng-model="ctrl.location" placeholder="location">
+  <!-- <input type="text" ng-model="ctrl.location" placeholder="location"> -->
+  <select ng-model="ctrl.location" placeholder="location">
+    <option value="denver">Denver</option>
+    <option value="philidelphia">Philidelphia</option>
+    <option value="newyork">New York</option>
+    <option value="boston">Boston</option>
+    <option value="pittsburgh">Pittsburgh</option>
+    <option value="losangeles">Los Angeles</option>
+  </select>
   Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
   Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
   Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
