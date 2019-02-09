@@ -8,7 +8,8 @@ app.controller('BathroomController', ['$http', function($http){
 // api key for google maps
 const controller = this;
 
-
+//index number for edit from
+this.indexOfEditFormToShow = null;
 
 //declare controller as this
 
