@@ -47,37 +47,7 @@
 
 
 
-  <div class="create">
-    <h1>Add Info</h1>
-    <form ng-submit="ctrl.createBathroom()">
-      <input type="text" ng-model="ctrl.name" placeholder="name">
-      <input type="text" ng-model="ctrl.location" placeholder="location">
-      Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
-      Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
-      Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
-      <input type="submit" value="Create Entry">
-    </form>
-  </div>
-  </div>
 
-  <!-- <ul ng-repeat='bathroom in ctrl.bathrooms'>
-          <li>{{bathroom.name}}</li>
-          <li>{{bathroom.location}}</li>
-          <li ng-if="bathroom.haveToPurchase">You Have to Buy Something</li>
-          <li ng-if="!bathroom.haveToPurchase">You Don't Have to Buy Something</li>
-          <li ng-if="bathroom.isAwkward">You may have to speak to an employee</li>
-          <li ng-if="!bathroom.isAwkward">You won't have to talk to anybody</li>
-          <li ng-if="bathroom.isClean">Clean!</li>
-          <li ng-if="!bathroom.isClean">Not Clean!</li>
-        </ul> -->
-
-  </div>
-  <div class="sidebar">
-    <h2>Cities</h2>
-    <nav ng-include="'partials/sidebar.html'"></nav>
-  </div>
-  <div class="content" ng-include="ctrl.includePath">
-  </div>
   <!-- map insert starts here -->
 
   <!-- controller stops here -->
