@@ -3,8 +3,19 @@ body {
   background:
 
 }
-
-
+.scroll {
+  border: 2px solid gray;
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  overflow-x: scroll;
+  margin: 30px auto;
+}
+ul {
+  list-style: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}
 
 .nav-bar {
   position: fixed;
