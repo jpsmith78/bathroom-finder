@@ -1,48 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="BathroomApp">
-<<<<<<< HEAD
-
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
-  <script src="/js/app.js" charset="utf-8"></script>
-
-  <link rel="stylesheet" href="css/app.css">
-  <meta charset="utf-8">
-
-  <title>Bathrm</title>
-</head>
-
-<body>
-  <div ng-controller="BathroomController as ctrl">
-
-
-    <div ng-controller="AuthController as auth">
-      <!-- auth stuff here -->
-<div class="nav-bar">
-        <h1>Bathroom Finder</h1>
-        <div class="createUserForm">
-          <form ng-submit='auth.createUser()'>
-            <input type="text" placeholder="username" ng-model='auth.username'>
-            <input type="password" placeholder="password" ng-model='auth.password'>
-            <input type="text" placeholder="current city" ng-model='auth.city'>
-            <button type='submit'>create</button>
-          </form>
-        </div>
-
-        <div class="logInForm">
-          <form ng-submit='auth.logIn()'>
-            <input type="text" placeholder="username" ng-model='auth.username'>
-            <input type="password" placeholder="password" ng-model='auth.password'>
-            <button type='submit'>Login to app</button>
-          </form>
-        </div>
-        <div ng-if='auth.loggedIn' class="logout">
-          <button ng-click='auth.logout()'>log out</button>
-        </div>
-      </div>
-    </div>
-
-=======
   <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
         <script src="/js/app.js" charset="utf-8"></script>
@@ -81,7 +38,6 @@
           <div class="content">
             <div  class="content" ng-include="ctrl.includePath"></div>
           </div>
->>>>>>> 94d5f77bdf9126fc75f04d039e19572a423cc1e9
 
         <div class="sidebar">
           <h2>Cities</h2>
@@ -91,7 +47,6 @@
 
 
 
-<<<<<<< HEAD
   <div class="create">
     <h1>Add Info</h1>
     <form ng-submit="ctrl.createBathroom()">
@@ -162,12 +117,6 @@
   </div>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ4_z4_6m1w4sqpVKUeV5Og4dqPZH7tpU&callback=initMap">
   </script>
-=======
-
-
- <!-- map insert starts here -->
-   <div id="map">
->>>>>>> 94d5f77bdf9126fc75f04d039e19572a423cc1e9
 
 </body>
 

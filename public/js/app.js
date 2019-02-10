@@ -142,7 +142,6 @@ app.controller('AuthController',['$http',function($http){
       console.log(er);
     })
   }
-<<<<<<< HEAD
 // checks if a user is logged in need route for for this in server.js
 
   this.checkIfLoggedIn = () => {
@@ -163,8 +162,6 @@ app.controller('AuthController',['$http',function($http){
 
   this.checkIfLoggedIn()
 
-=======
->>>>>>> 94d5f77bdf9126fc75f04d039e19572a423cc1e9
 
 
   this.logIn = function(){
@@ -176,13 +173,9 @@ app.controller('AuthController',['$http',function($http){
         password: this.password
       }
     }).then(function(res){
-<<<<<<< HEAD
-      controller.loggedIn = true
-=======
       console.log(res);
       controller.loggedIn = res.data.username
       controller.checkIfLoggedIn()
->>>>>>> 94d5f77bdf9126fc75f04d039e19572a423cc1e9
 
       console.log(res);
       controller.checkIfLoggedIn()
@@ -227,7 +220,7 @@ app.controller('mapsController', ['$http', function($http){
 const controller = this
 this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 this.address = ""
-this.apiKey="key=AIzaSyCXA92VRo9IXTiXf1jBLI_KDE9lLefHrl8"
+this.apiKey="key=AIzaSyB2xy0cj7E4f4HQmRqconQgQq57iOjbXXw"
 this.location = 'United States'
 
 
