@@ -13,11 +13,12 @@ app.controller('BathroomController', ['$http', function($http){
 // api key for google maps
 const controller = this;
 
-
+//index number for edit from
+this.indexOfEditFormToShow = null;
 
 //declare controller as this
 
-this.includePath = '/partials/sidebar.html';
+this.includePath = '/partials/home.html';
 this.changeInclude = (path) => {
   this.includePath = 'partials/'+ path +'.html';
 };
@@ -141,6 +142,7 @@ app.controller('AuthController',['$http',function($http){
       console.log(er);
     })
   }
+<<<<<<< HEAD
 // checks if a user is logged in need route for for this in server.js
 
   this.checkIfLoggedIn = () => {
@@ -161,6 +163,8 @@ app.controller('AuthController',['$http',function($http){
 
   this.checkIfLoggedIn()
 
+=======
+>>>>>>> 94d5f77bdf9126fc75f04d039e19572a423cc1e9
 
 
   this.logIn = function(){
@@ -172,7 +176,13 @@ app.controller('AuthController',['$http',function($http){
         password: this.password
       }
     }).then(function(res){
+<<<<<<< HEAD
       controller.loggedIn = true
+=======
+      console.log(res);
+      controller.loggedIn = res.data.username
+      controller.checkIfLoggedIn()
+>>>>>>> 94d5f77bdf9126fc75f04d039e19572a423cc1e9
 
       console.log(res);
       controller.checkIfLoggedIn()
@@ -189,6 +199,25 @@ app.controller('AuthController',['$http',function($http){
        controller.loggedIn = false
     })
   }
+
+  // checks if a user is logged in need route for for this in server.js
+
+    this.checkIfLoggedIn = () => {
+      $http({
+        method: "GET",
+        url: '/checkIfLoggedIn'
+
+      }).then(function(res){
+         if(res.data.user){
+            console.log('your still logged in bro');
+            controller.loggedIn = true;
+            controller.username = res.data.user.username
+            console.log(res.data);
+         }
+      })
+    }
+
+    this.checkIfLoggedIn()
 
 }])
 

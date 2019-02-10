@@ -28,7 +28,7 @@ router.delete('/:id',(req,res) => {
 })
 
 router.put('/:id',(req,res) => {
-  Bathroom.findByIdandUpdate(req.params.id, req.body,{
+  Bathroom.findByIdAndUpdate(req.params.id, req.body,{
     new: true
   },(err,updatedBathroom) => {
       res.json(updatedBathroom)
