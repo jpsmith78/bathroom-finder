@@ -22,7 +22,7 @@ this.indexOfEditFormToShow = null;
 
 this.includePath = '/partials/home.html';
 this.changeInclude = (path) => {
-  this.includePath = 'partials/'+ path +'.html';
+this.includePath = 'partials/'+ path +'.html';
 };
 
 //function to initizlize map
@@ -240,23 +240,23 @@ this.setMapAsPhiladelphia = () => {
   this.getLocationForPresetCitiesInLatAndLong()
 }
 this.setMapAsNewYork = () => {
-  this.address = 'New york city'
+  this.address = 'new york city manhattan'
   this.getLocationForPresetCitiesInLatAndLong()
 }
 this.setMapAsBoston = () => {
-  this.address = 'Boston MA'
+  this.address = '02101'
   this.getLocationForPresetCitiesInLatAndLong()
 }
 this.setMapAsLosAngles = () => {
-  this.address = 'LA california'
+  this.address = 'los angeles,Ca'
   this.getLocationForPresetCitiesInLatAndLong()
 }
 this.setMapAsDenver = () => {
-  this.address = 'Denver'
+  this.address = 'denver, co'
   this.getLocationForPresetCitiesInLatAndLong()
 }
 this.setMapAsPittsburgh = () => {
-  this.address = 'pittsburgh'
+  this.address = 'pittsburgh, pa'
   this.getLocationForPresetCitiesInLatAndLong()
 }
 
@@ -269,6 +269,7 @@ this.getLocationForPresetCitiesInLatAndLong = function(){
     method: "GET",
     url: controller.baseURL + 'address=' + controller.address + '&key=' + controller.apiKey
 }).then(function(res){
+  console.log(res.data);
   controller.location = res.data.results[0].geometry.location;
   console.log(controller.location);
   controller.changeLocation()
