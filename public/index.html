@@ -39,7 +39,8 @@
             <div  class="content" ng-include="ctrl.includePath"></div>
           </div>
 
-        <div class="sidebar">
+
+        <div ng-controller = 'mapsController as map' class="sidebar">
           <h2>Cities</h2>
           <nav ng-include="'partials/sidebar.html'"></nav>
         </div>
