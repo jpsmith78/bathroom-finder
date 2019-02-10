@@ -1,5 +1,7 @@
 const bathroomLocations = []
 const bathroomLocationsInLatAndLong = []
+let mapLocation
+let userCity
 //delclaring empty array to add locations for markers in
 
 
@@ -147,9 +149,12 @@ app.controller('AuthController',['$http',function($http){
       url: '/checkIfLoggedIn'
 
     }).then(function(res){
-       if(res.data.user){
+      if(res.data.user){
+          userCity = res.data.user.city
+          console.log(userCity);
           console.log('your still logged in bro');
           controller.loggedIn = true
+
        }
     })
   }
@@ -168,8 +173,9 @@ app.controller('AuthController',['$http',function($http){
       }
     }).then(function(res){
       controller.loggedIn = true
-      controller.checkIfLoggedIn()
 
+      console.log(res);
+      controller.checkIfLoggedIn()
     },function(err){
       console.log(err);
     })
@@ -199,7 +205,10 @@ this.location = 'United States'
 
 
 //setting the location of the map based on click
-
+this.setMapAsUserCity = () => {
+   this.address = userCity
+   this.getLocationForPresetCitiesInLatAndLong()
+}
 
 this.setMapAsPhiladelphia = () => {
   this.address = 'Philadelphia'
@@ -277,7 +286,7 @@ initMap()
 
 
 
-let mapLocation
+
 
 
 function initMap() {

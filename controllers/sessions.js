@@ -6,6 +6,7 @@ const bcrypt = require ('bcrypt')
 router.delete('/', (req, res)=>{
     req.session.destroy(() => {
         res.status(200).json({
+
           status:200,
           message: 'Logout complete'
         })
@@ -20,7 +21,7 @@ router.post('/', (req, res)=>{
             console.log('you logged in')
             res.status(201).json({
               status:201,
-              message: 'created!'
+              message: 'created!',
             });
         } else {
             console.log('wrong password');
