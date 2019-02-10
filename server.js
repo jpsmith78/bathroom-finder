@@ -1,5 +1,5 @@
 //==========Dependencies==========//
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -8,11 +8,16 @@ const session = require('express-session');
 app.use(express.json());
 app.use(express.static('public'));
 
+
+
 app.use(session({
     secret:'feedmeseymour',
     resave: false,
     saveUninitialized: false
 }));
+
+
+
 
 const bathroomController = require('./controllers/bathrooms.js');
 app.use('/bathrooms', bathroomController);
