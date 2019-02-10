@@ -39,6 +39,13 @@ app.get('/checkIfLoggedIn',(req,res) => {
   res.json(req.session)
 })
 
+//sending api apiKey
+
+app.get('/getApiKey',(req,res) => {
+  res.send(process.env.GOOGLEMAPAPI)
+})
+
+
 
 mongoose.connect('mongodb://localhost:27017/project_3', {useNewUrlParser: true});
 mongoose.connection.once('open', () => {
