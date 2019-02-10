@@ -1,19 +1,23 @@
-<h1>Add Info</h1>
-<form ng-show="auth.loggedIn" ng-submit="ctrl.createBathroom()">
-  <input type="text" ng-model="ctrl.name" placeholder="name">
-  <!-- <input type="text" ng-model="ctrl.location" placeholder="location"> -->
-  <select ng-model="ctrl.location" placeholder="location">
-    <option value="Denver">Denver</option>
-    <option value="Philidelphia">Philidelphia</option>
-    <option value="New York">New York</option>
-    <option value="Boston">Boston</option>
-    <option value="Pittsburgh">Pittsburgh</option>
-    <option value="Los Angeles">Los Angeles</option>
-  </select>
-  Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
 
-  Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
-  Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
-  <input type="submit"  value="Create Entry">
-</form>
+<button onclick="document.getElementById('modal').style.display='block'">add bathroom</button>
+<div id="modal">
+  <h1>Add Bathroom</h1>
+  <form ng-show="auth.loggedIn" ng-submit="ctrl.createBathroom()">
+    <input type="text" ng-model="ctrl.name" placeholder="name">
+    <!-- <input type="text" ng-model="ctrl.location" placeholder="location"> -->
+    <select ng-model="ctrl.location" placeholder="location">
+      <option value="Denver">Denver</option>
+      <option value="Philidelphia">Philidelphia</option>
+      <option value="New York">New York</option>
+      <option value="Boston">Boston</option>
+      <option value="Pittsburgh">Pittsburgh</option>
+      <option value="Los Angeles">Los Angeles</option>
+    </select>
+    Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
+
+    Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
+    Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
+    <input type="submit"  value="Create Entry" onclick="document.getElementById('modal').style.display='none'">
+  </form>
+  <button onclick="document.getElementById('modal').style.display='none'">Close Form</button>
 </div>

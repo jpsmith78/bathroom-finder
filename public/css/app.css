@@ -3,6 +3,9 @@ body {
   background:
 
 }
+#modal {
+  display: none;
+}
 .scroll {
   border: 2px solid gray;
   border-radius: 5px;
