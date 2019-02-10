@@ -15,7 +15,6 @@
 
           <div class="nav-bar">
             <h1>Bathroom Finder</h1>
-            <h4 ng-click="">Click to Create a User</h4>
             <div ng-hide="auth.loggedIn" class="createUserForm">
               <form ng-submit='auth.createUser()'>
                 <input type="text" placeholder="username" ng-model='auth.username'>
@@ -40,8 +39,7 @@
             <div  class="content" ng-include="ctrl.includePath"></div>
           </div>
 
-
-        <div ng-controller = 'mapsController as map' class="sidebar">
+        <div class="sidebar">
           <h2>Cities</h2>
           <nav ng-include="'partials/sidebar.html'"></nav>
         </div>
@@ -64,23 +62,6 @@
 
     <div class="map">
       <div id="maping"> </div>
-
-
-
-<button ng-click="map.changeLocation()">
-</button>
-<button ng-click = 'map.setMapAsPhiladelphia()' name="button">pittsburgh</button>
-<button ng-click = 'map.setMapAsNewYork()' name="button">Ny</button>
-<button ng-click = 'map.setMapAsBoston()' name="button">Boston</button>
-<button ng-click = 'map.setMapAsPittsburgh()' name="button">Pittt</button>
-<button ng-click = 'map.setMapAsLosAngles()' name="button">LA</button>
-<button ng-click = 'map.setMapAsDenver()' name="button">Denver</button>
-<button ng-click =  'map.setMapAsUserCity()'>user city</button>
-
-
-
-
-
 
 
 
