@@ -223,10 +223,24 @@ app.controller('mapsController', ['$http', function($http){
 const controller = this
 this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 this.address = ""
-this.apiKey=""
+this.apiKey =
 this.location = 'United States'
 
+//getting apiKey
 
+this.getApiKey = () => {
+  $http({
+    method: "GET",
+    url: '/getApiKey'
+  }).then(function(res){
+
+    controller.apiKey = res.data
+
+
+  })
+}
+//get api on page load
+this.getApiKey()
 
 
 //setting the location of the map based on click
