@@ -1,4 +1,5 @@
 const bathroomLocations = []
+const bathroomLocationsInLatAndLong = []
 //delclaring empty array to add locations for markers in
 
 
@@ -241,20 +242,27 @@ this.getLocationForPresetCitiesInLatAndLong = function(){
 
 }
 
-
-
+setTimeout(function(){
 this.getLatAndLongForBathroomLocations = function(){
-  setTimeout(function(){ console.log(bathroomLocations); }, 5000);
+
+  for (var i = 0; i < bathroomLocations.length; i++) {
+    console.log(bathroomLocations[i])
+
 
   $http({
       method: "GET",
-      url: controller.baseURL + 'address=' + 'pittsburgh' + '&' + controller.apiKey
+      url: controller.baseURL + 'address=' + bathroomLocations[i] + '&' + controller.apiKey
     }).then(function(res){
-      console.log(res);
+       bathroomLocationsInLatAndLong.push(res.data.results[0].geometry.location);
     })
-
+  }
 }
 this.getLatAndLongForBathroomLocations()
+}, 5000)
+// check if bathroom lat and long made it to array
+// setTimeout(function(){
+//   console.log(bathroomLocationsInLatAndLong);
+// },10000)
 
 
 this.changeLocation = () => {
@@ -264,12 +272,29 @@ initMap()
 }
 
 }])
+//image of icons
+
+
 
 
 let mapLocation
 
 
 function initMap() {
+
+
+  var icon = {
+       url: "/images/toilet.png", // url
+       scaledSize: new google.maps.Size(30, 30), // size
+       origin: new google.maps.Point(0,0), // origin
+
+   };
+
+
+
+
+
+
       var myLatLng = mapLocation
 
       var map = new google.maps.Map(document.getElementById('maping'), {
@@ -277,10 +302,17 @@ function initMap() {
         center: myLatLng
       });
       // for loop here for locations in log
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!',
+      for (var i = 0; i < bathroomLocationsInLatAndLong.length; i++) {
 
-      });
+        var marker = new google.maps.Marker({
+          position: bathroomLocationsInLatAndLong[i],
+          map: map,
+          title: 'free bathroom!!!!',
+          icon: icon,
+
+
+        });
+      }
+
+
 }
