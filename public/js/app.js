@@ -1,3 +1,5 @@
+
+
 const bathroomLocations = []
 const bathroomLocationsInLatAndLong = []
 let mapLocation
@@ -174,7 +176,7 @@ app.controller('AuthController',['$http',function($http){
       }
     }).then(function(res){
 
-      console.log(res);
+      userCity = res.data.city.user.city
 
       controller.loggedIn = true;
       controller.checkIfLoggedIn()
@@ -217,10 +219,11 @@ app.controller('AuthController',['$http',function($http){
 
 app.controller('mapsController', ['$http', function($http){
 // setting api request url variables
+
 const controller = this
 this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 this.address = ""
-this.apiKey="key=AIzaSyB2xy0cj7E4f4HQmRqconQgQq57iOjbXXw"
+this.apiKey="AIzaSyCUK9w5mZ2rEutrGBeBWIVD2uS2xCQHOa4"
 this.location = 'United States'
 
 
@@ -264,7 +267,7 @@ this.getLocationForPresetCitiesInLatAndLong = function(){
 
   $http({
     method: "GET",
-    url: controller.baseURL + 'address=' + controller.address + '&' + controller.apiKey
+    url: controller.baseURL + 'address=' + controller.address + '&key=' + controller.apiKey
 }).then(function(res){
   controller.location = res.data.results[0].geometry.location;
   console.log(controller.location);
@@ -282,8 +285,9 @@ this.getLatAndLongForBathroomLocations = function(){
 
   $http({
       method: "GET",
-      url: controller.baseURL + 'address=' + bathroomLocations[i] + '&' + controller.apiKey
+      url: controller.baseURL + 'address=' + bathroomLocations[i] + '&key=' +controller.apiKey
     }).then(function(res){
+      
        bathroomLocationsInLatAndLong.push(res.data.results[0].geometry.location);
     })
   }

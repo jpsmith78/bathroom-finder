@@ -9,7 +9,7 @@ router.delete('/', (req, res)=>{
         res.status(200).json({
 
           status:200,
-          message: 'Logout complete'
+          message: 'Logout complete',
         })
     })
 });
@@ -24,7 +24,7 @@ router.post('/', (req, res)=>{
             res.status(201).json({
               status:201,
               message: 'created!',
-              city: req.session.city
+              city: req.session
             });
         } else {
             console.log('wrong password');
