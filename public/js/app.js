@@ -223,7 +223,7 @@ app.controller('mapsController', ['$http', function($http){
 const controller = this
 this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 this.address = ""
-this.apiKey="AIzaSyCUK9w5mZ2rEutrGBeBWIVD2uS2xCQHOa4"
+this.apiKey=""
 this.location = 'United States'
 
 
@@ -287,7 +287,7 @@ this.getLatAndLongForBathroomLocations = function(){
       method: "GET",
       url: controller.baseURL + 'address=' + bathroomLocations[i] + '&key=' +controller.apiKey
     }).then(function(res){
-      
+
        bathroomLocationsInLatAndLong.push(res.data.results[0].geometry.location);
     })
   }
