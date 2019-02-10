@@ -5,6 +5,7 @@ const bcrypt = require ('bcrypt')
 
 router.delete('/', (req, res)=>{
     req.session.destroy(() => {
+      console.log('you logged out bro');
         res.status(200).json({
 
           status:200,
@@ -18,10 +19,12 @@ router.post('/', (req, res)=>{
     User.findOne({username:req.body.username}, (err, foundUser)=>{
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.user = foundUser
+
             console.log('you logged in')
             res.status(201).json({
               status:201,
               message: 'created!',
+              city: req.session.city
             });
         } else {
             console.log('wrong password');

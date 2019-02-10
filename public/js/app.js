@@ -173,12 +173,12 @@ app.controller('AuthController',['$http',function($http){
         password: this.password
       }
     }).then(function(res){
-      console.log(res);
-      controller.loggedIn = res.data.username
-      controller.checkIfLoggedIn()
 
       console.log(res);
+
+      controller.loggedIn = true;
       controller.checkIfLoggedIn()
+
     },function(err){
       console.log(err);
     })
@@ -205,7 +205,7 @@ app.controller('AuthController',['$http',function($http){
             console.log('your still logged in bro');
             controller.loggedIn = true;
             controller.username = res.data.user.username
-            console.log(res.data);
+
          }
       })
     }
