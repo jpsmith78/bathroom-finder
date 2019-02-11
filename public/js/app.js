@@ -203,6 +203,8 @@ app.controller('AuthController',['$http',function($http){
       userCity = res.data.city.user.city
 
       controller.loggedIn = true;
+      controller.username= ''
+      controller.password= ''
       controller.checkIfLoggedIn()
 
     },function(err){
