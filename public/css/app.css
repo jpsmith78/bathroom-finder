@@ -52,12 +52,14 @@ ul {
   background: #8fb9cf;
   display: inline-block;
   color: white;
+  padding-left: 10px;
   /* opacity: .6; */
 }
 
 .sidebar > h2 {
   text-decoration: underline;
   padding-bottom: 10px;
+
 }
 
 .content {
