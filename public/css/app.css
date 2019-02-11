@@ -1,7 +1,9 @@
 /* *{
   border: 1px solid red
 } */
-
+.btn{
+  margin-bottom: 5px;
+}
 html, body {
 
 
@@ -48,11 +50,12 @@ ul {
   top: 0;
   overflow: hidden;
   padding-top: 100px;
-  margin-top: 80px;
+  margin-top: 100px;
   background: #8fb9cf;
   display: inline-block;
   color: white;
   padding-left: 10px;
+  text-align: center;
   /* opacity: .6; */
 }
 
@@ -61,10 +64,22 @@ ul {
   padding-bottom: 10px;
 
 }
+.btn > h3 {
+  font-size: 20px;
+
+
+}
+.sidebar > .btn {
+  width: 2em;
+}
+.sidebarFix {
+  width: 90%;
+
+}
 
 .content {
   text-align: center;
-  margin-top: 150px;
+  margin-top: 40px;
 }
 
 .nav-bar > h1 {
@@ -121,7 +136,7 @@ input[type=checkbox]{
 
 .createButton {
   display: block;
-  margin: 3% auto;
+  margin: 5% auto;
 
 }
 
@@ -151,4 +166,18 @@ input[type=checkbox]{
 
 .citySelector > h1 {
   text-align: center;
+}
+
+.mainHeading{
+  font-size: 45px;
+}
+.navHeader >h6,h1 {
+
+  display: inline;
+}
+.addName {
+  padding: 8px;
+  border: 1px solid #cccccc;
+  text-align: center;
+  border-radius: 2px
 }

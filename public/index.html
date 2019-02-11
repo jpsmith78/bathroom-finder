@@ -9,38 +9,39 @@
   <link rel="stylesheet" href="css/app.css">
   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
   <meta charset="utf-8">
-  <title>Bathrm</title>
+  <title>Sht.r</title>
 </head>
 <body ng-controller="BathroomController as ctrl">
   <div ng-controller="AuthController as auth">
     <!-- auth stuff here -->
     <div class="nav-bar">
       <div class="navHeader">
-        <h1>Bathroom Finder</h1>
+        <h1 class = 'mainHeading'>Sht.r</h1>
+        <h6> relief is right around the corner</h6>
       </div>
       <div class="logInForms">
-        <button ng-hide="auth.loggedIn" ng-click='auth.showCreateUserForm()'>Create New User</button>
+        <button class='btn btn-outline-light' ng-hide="auth.loggedIn" ng-click='auth.showCreateUserForm()'>Create New User</button>
         <div ng-hide="auth.loggedIn">
           <form ng-if='auth.showCreateForm' ng-submit='auth.createUser()'>
             <input type="text" placeholder="username" ng-model='auth.username'>
             <input type="password" placeholder="password" ng-model='auth.password'>
             <input type="text" placeholder="current city" ng-model='auth.city'>
-            <button type='submit'>create</button>
+            <button class = 'btn btn-outline-light' type='submit'>Submit</button>
           </form>
         </div>
-        <button ng-hide="auth.loggedIn" ng-click='auth.showLoginFormForLogin()'>Login</button>
+        <button class='btn btn-outline-light' ng-hide="auth.loggedIn" ng-click='auth.showLoginFormForLogin()'>Login</button>
         <div ng-hide="auth.loggedIn" class="logInForm">
           <form ng-if='auth.showLoginForm' ng-submit='auth.logIn()'>
             <input type="text" placeholder="username" ng-model='auth.username'>
             <input type="password" placeholder="password" ng-model='auth.password'>
-            <button type='submit'>Login to app</button>
+            <button class='btn btn-outline-light' type='submit'>Submit</button>
           </form>
         </div>
         <div ng-if='auth.loggedIn' class="logout">
-          <button ng-click='auth.logout()'>log out</button>
+          <button class='btn btn-outline-light' ng-click='auth.logout()'>log out</button>
         </div>
       </div>
-      <div ng-include="'partials/headerMessage.html'" class="home-text"></div>
+      <div ng-if='auth.loggedIn' ng-include="'partials/headerMessage.html'" class="home-text"></div>
     </div>
     <div ng-controller='mapsController as map' class="sidebar">
       <h2>Cities</h2>
@@ -48,15 +49,15 @@
     </div>
     <div class="addInfo">
       <div class="addInfoContent">
-        <h4 ng-show='auth.loggedIn'>Sumit New Bathroom Entry!</h4>
+        <h4 ng-show='auth.loggedIn'>Submit New Bathroom Entry!</h4>
         <form ng-show="auth.loggedIn" ng-submit="ctrl.createBathroom()">
-          <input class='addName' type="text" ng-model="ctrl.name" placeholder="name">
-          <input ng-model='ctrl.location' type="search" id="address-input" placeholder="where can I poo??" />
+          <input class='addName' type="text" ng-model="ctrl.name" placeholder="Name your bathroom!">
+          <input ng-model='ctrl.location' type="search" id="address-input" placeholder="Bathroom location" />
           Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
 
           Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
           Is it Clean?<input ng-model="ctrl.isClean" type="checkbox">
-          <input class='createButton' type="submit" value="Create Entry">
+          <input class='btn btn-outline-dark createButton' type="submit" value="Create Entry">
         </form>
       </div>
     </div>
@@ -79,7 +80,9 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ4_z4_6m1w4sqpVKUeV5Og4dqPZH7tpU&callback=initMap">
   </script>
   </div>
-  <div ng-include='ctrl.includePath' class='citySelector'>
+
+  <div ng-controller = 'AuthController as auth'ng-include='ctrl.includePath' class='citySelector content'>
+
   </div>
 </body>
 
