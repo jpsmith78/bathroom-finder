@@ -2,7 +2,7 @@
 
 const bathroomLocations = []
 const bathroomLocationsInLatAndLong = []
-let mapLocation
+let mapLocation ={lat: 39.9525839, lng: -75.1652215}
 let userCity
 
 //delclaring empty array to add locations for markers in
@@ -76,6 +76,7 @@ this.includePath = 'partials/'+ path +'.html';
 
 
 
+
     }, function(err){
       console.log(err);
     });
@@ -85,6 +86,7 @@ this.includePath = 'partials/'+ path +'.html';
 
 //Call getBathrooms on page load
   this.getBathrooms();
+
 
 
 
@@ -287,9 +289,9 @@ this.getLocationForPresetCitiesInLatAndLong = function(){
     method: "GET",
     url: controller.baseURL + 'address=' + controller.address + '&key=' + controller.apiKey
 }).then(function(res){
-  console.log(res.data);
+
   controller.location = res.data.results[0].geometry.location;
-  console.log(controller.location);
+
   controller.changeLocation()
 })
 
@@ -308,11 +310,12 @@ this.getLatAndLongForBathroomLocations = function(){
     }).then(function(res){
 
        bathroomLocationsInLatAndLong.push(res.data.results[0].geometry.location);
+
     })
   }
 }
 this.getLatAndLongForBathroomLocations()
-}, 5000)
+}, 2000)
 // check if bathroom lat and long made it to array
 // setTimeout(function(){
 //   console.log(bathroomLocationsInLatAndLong);
@@ -330,8 +333,9 @@ initMap()
 
 
 
-
-
+setTimeout(function(){
+  initMap()
+},3000)
 
 
 function initMap() {
@@ -378,4 +382,4 @@ setTimeout(function(){ var placesAutocomplete = places({
    appId: 'plRDWJAWD3QD',
    apiKey: 'bbda1e3cb58b537bb9d186e3ffc95e0c',
    container: document.querySelector('#address-input')
- }); }, 3000);
+ }); }, 100);
