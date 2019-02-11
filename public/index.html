@@ -15,17 +15,22 @@
 
           <div class="nav-bar">
             <h1>Bathroom Finder</h1>
-            <div ng-hide="auth.loggedIn" class="createUserForm">
-              <form ng-submit='auth.createUser()'>
-                <input type="text" placeholder="username" ng-model='auth.username'>
+              <button ng-hide="auth.loggedIn" ng-click = 'auth.showCreateUserForm()'>Create New User</button>
+            <div ng-hide="auth.loggedIn">
+
+              <form ng-if = 'auth.showCreateForm' ng-submit='auth.createUser()'>
+
+                <input  type="text" placeholder="username" ng-model='auth.username'>
                 <input type="password" placeholder="password" ng-model='auth.password'>
                 <input type="text" placeholder="current city" ng-model= 'auth.city'>
                 <button type='submit'>create</button>
               </form>
             </div>
 
-            <div ng-hide="auth.loggedIn" class="logInForm">
-              <form  ng-submit='auth.logIn()'>
+
+              <button ng-hide="auth.loggedIn" ng-click = 'auth.showLoginFormForLogin()'>Login</button>
+              <div ng-hide="auth.loggedIn" class="logInForm">
+              <form ng-if = 'auth.showLoginForm'  ng-submit='auth.logIn()'>
                 <input type="text" placeholder="username" ng-model='auth.username'>
                 <input type="password" placeholder="password" ng-model='auth.password'>
                 <button type='submit'>Login to app</button>
