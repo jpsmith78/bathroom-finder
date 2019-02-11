@@ -4,6 +4,7 @@ const bathroomLocations = []
 const bathroomLocationsInLatAndLong = []
 let mapLocation
 let userCity
+
 //delclaring empty array to add locations for markers in
 
 
@@ -209,6 +210,7 @@ app.controller('AuthController',['$http',function($http){
             console.log('your still logged in bro');
             controller.loggedIn = true;
             controller.username = res.data.user.username
+            controller.city = res.data.user.city
 
          }
       })
