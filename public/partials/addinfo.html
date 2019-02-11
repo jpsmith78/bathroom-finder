@@ -1,5 +1,5 @@
 
-<h1>Add Info</h1>
+<h1 ng-show ='auth.loggedIn' >Add Info</h1>
 <form ng-show="auth.loggedIn" ng-submit="ctrl.createBathroom()">
   <input type="text" ng-model="ctrl.name" placeholder="name">
   <input ng-model = 'ctrl.location' type="search" id="address-input" placeholder="Where are we going?" />
