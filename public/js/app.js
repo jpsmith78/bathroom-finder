@@ -335,7 +335,7 @@ initMap()
 //image of icons
 
 
-
+//so map loads on page load
 setTimeout(function(){
   initMap()
 },3000)
@@ -351,12 +351,7 @@ function initMap() {
 
    };
 
-
-
-
-
-
-      var myLatLng = mapLocation
+    var myLatLng = mapLocation
 
       var map = new google.maps.Map(document.getElementById('maping'), {
         zoom: 13,
@@ -370,13 +365,9 @@ function initMap() {
           map: map,
           title: 'free bathroom!!!!',
           icon: icon,
-
-
         });
       }
-
-
-}
+    }
 
 
 //search box //this is a free api key
