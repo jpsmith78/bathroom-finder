@@ -3,6 +3,9 @@ body {
   background:
 
 }
+#modal {
+  display: none;
+}
 .scroll {
   border: 2px solid gray;
   border-radius: 5px;
@@ -64,3 +67,12 @@ ul {
   text-align: center;
   padding-top: 100px;
 }
+
+.addInfo {
+  width: 100%;
+}
+  .addInfoContent{
+    width:75%;
+    margin: 0 auto;
+    text-align: center;
+  }

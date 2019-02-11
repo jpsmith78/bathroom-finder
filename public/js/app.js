@@ -2,8 +2,9 @@
 
 const bathroomLocations = []
 const bathroomLocationsInLatAndLong = []
-let mapLocation
+let mapLocation ={lat: 39.9525839, lng: -75.1652215}
 let userCity
+
 //delclaring empty array to add locations for markers in
 
 
@@ -73,6 +74,9 @@ this.includePath = 'partials/'+ path +'.html';
 
 
 
+
+
+
     }, function(err){
       console.log(err);
     });
@@ -82,6 +86,7 @@ this.includePath = 'partials/'+ path +'.html';
 
 //Call getBathrooms on page load
   this.getBathrooms();
+
 
 
 
@@ -126,6 +131,22 @@ this.includePath = 'partials/'+ path +'.html';
 app.controller('AuthController',['$http',function($http){
   const controller = this
   this.loggedIn = false
+  //login form
+  this.showCreateForm = false
+  this.showLoginForm = false
+
+  this.showCreateUserForm = () => {
+    this.showCreateForm = !this.showCreateForm
+
+  }
+
+  this.showLoginFormForLogin = () => {
+    this.showLoginForm = !this.showLoginForm
+  }
+
+
+
+
 
   this.createUser = function(){
     $http({
@@ -140,6 +161,9 @@ app.controller('AuthController',['$http',function($http){
       console.log(res);
       controller.username = ''
       controller.password = ''
+      controller.city = ''
+      controller.showCreateForm = false
+      controller.showLoginForm = true
     },function(er){
       console.log(er);
     })
@@ -179,6 +203,8 @@ app.controller('AuthController',['$http',function($http){
       userCity = res.data.city.user.city
 
       controller.loggedIn = true;
+      controller.username= ''
+      controller.password= ''
       controller.checkIfLoggedIn()
 
     },function(err){
@@ -207,6 +233,7 @@ app.controller('AuthController',['$http',function($http){
             console.log('your still logged in bro');
             controller.loggedIn = true;
             controller.username = res.data.user.username
+            controller.city = res.data.user.city
 
          }
       })
@@ -224,7 +251,12 @@ const controller = this
 this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 this.address = ""
 this.apiKey =
-this.location = 'United States'
+this.location =
+
+
+
+
+
 
 //getting apiKey
 
@@ -283,9 +315,9 @@ this.getLocationForPresetCitiesInLatAndLong = function(){
     method: "GET",
     url: controller.baseURL + 'address=' + controller.address + '&key=' + controller.apiKey
 }).then(function(res){
-  console.log(res.data);
+
   controller.location = res.data.results[0].geometry.location;
-  console.log(controller.location);
+
   controller.changeLocation()
 })
 
@@ -304,11 +336,15 @@ this.getLatAndLongForBathroomLocations = function(){
     }).then(function(res){
 
        bathroomLocationsInLatAndLong.push(res.data.results[0].geometry.location);
+
     })
   }
 }
 this.getLatAndLongForBathroomLocations()
-}, 5000)
+}, 2000)
+
+
+
 // check if bathroom lat and long made it to array
 // setTimeout(function(){
 //   console.log(bathroomLocationsInLatAndLong);
@@ -325,9 +361,10 @@ initMap()
 //image of icons
 
 
-
-
-
+//so map loads on page load
+setTimeout(function(){
+  initMap()
+},3000)
 
 
 function initMap() {
@@ -340,15 +377,10 @@ function initMap() {
 
    };
 
-
-
-
-
-
-      var myLatLng = mapLocation
+    var myLatLng = mapLocation
 
       var map = new google.maps.Map(document.getElementById('maping'), {
-        zoom: 15,
+        zoom: 13,
         center: myLatLng
       });
       // for loop here for locations in log
@@ -359,10 +391,15 @@ function initMap() {
           map: map,
           title: 'free bathroom!!!!',
           icon: icon,
-
-
         });
       }
+    }
 
 
-}
+//search box //this is a free api key
+
+setTimeout(function(){ var placesAutocomplete = places({
+   appId: 'plRDWJAWD3QD',
+   apiKey: 'bbda1e3cb58b537bb9d186e3ffc95e0c',
+   container: document.querySelector('#address-input')
+ }); }, 100);
