@@ -96,6 +96,8 @@ ul {
 .home-text {
   text-align: center;
   margin-top: 0%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .main {
@@ -123,8 +125,10 @@ input[type=checkbox]{
 
 .home-text > h1 {
   font-size: 25px;
+  color: white;
 }
 
 .home-text > h3 {
   font-size: 15px;
+  color: white;
 }
