@@ -17,6 +17,10 @@
 
           <div class="nav-bar">
             <h1>Bathroom Finder</h1>
+            <div ng-include="ctrl.includePath" class="home-text">
+
+            </div>
+
               <button ng-hide="auth.loggedIn" ng-click = 'auth.showCreateUserForm()'>Create New User</button>
             <div ng-hide="auth.loggedIn">
 
@@ -112,11 +116,6 @@
   </div>
 
   <div class="main">
-
-
-  <div ng-include="ctrl.includePath" class="home-text">
-
-  </div>
 
 </body>
 

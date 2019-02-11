@@ -48,7 +48,7 @@ ul {
   top: 0;
   overflow: hidden;
   padding-top: 100px;
-  margin-top: 20px;
+  margin-top: 80px;
   background: #8fb9cf;
   display: inline-block;
 
@@ -87,7 +87,7 @@ ul {
 
 .addInfoContent{
     width:100%;
-    margin: 25% auto;
+    margin: 40% auto;
     margin-bottom: 2%;
     text-align: center;
   }
@@ -119,4 +119,12 @@ input[type=checkbox]{
   display: block;
   margin: 3% auto;
 
+}
+
+.home-text > h1 {
+  font-size: 25px;
+}
+
+.home-text > h3 {
+  font-size: 15px;
 }
