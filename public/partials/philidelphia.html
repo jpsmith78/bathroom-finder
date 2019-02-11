@@ -1,10 +1,9 @@
-<h1>Philidelphia</h1>
-
+<h1>Philadelphia</h1>
 
 
 
 <div class="scroll">
-  <ul ng-repeat='bathroom in ctrl.bathrooms | filter:"Philidelphia"'>
+  <ul ng-repeat='bathroom in ctrl.bathrooms | filter:"Philadelphia"'>
     <li>{{bathroom.name}}</li>
     <li>{{bathroom.location}}</li>
     <li ng-if="bathroom.haveToPurchase">You Have to Buy Something</li>
@@ -13,8 +12,8 @@
     <li ng-if="!bathroom.isAwkward">You won't have to talk to anybody</li>
     <li ng-if="bathroom.isClean">Clean!</li>
     <li ng-if="!bathroom.isClean">Not Clean!</li>
-    <button ng-show="auth.loggedIn" ng-click="ctrl.deleteBathroom(bathroom)">Delete</button>
-    <button ng-show="auth.loggedIn" ng-click="ctrl.indexOfEditFormToShow = $index">Edit</button>
+    <button class = 'btn btn-outline-danger'ng-show="auth.loggedIn" ng-click="ctrl.deleteBathroom(bathroom)">Delete</button>
+    <button class = 'btn btn-outline-info'ng-show="auth.loggedIn" ng-click="ctrl.indexOfEditFormToShow = $index">Edit</button>
 
     <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBathroom(bathroom)">
       <input type="text" ng-model="ctrl.updatedName" placeholder="name">
