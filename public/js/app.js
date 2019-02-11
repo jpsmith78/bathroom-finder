@@ -168,27 +168,6 @@ app.controller('AuthController',['$http',function($http){
       console.log(er);
     })
   }
-// checks if a user is logged in need route for for this in server.js
-
-  this.checkIfLoggedIn = () => {
-    $http({
-      method: "GET",
-      url: '/checkIfLoggedIn'
-
-    }).then(function(res){
-      if(res.data.user){
-          userCity = res.data.user.city
-          console.log(userCity);
-          console.log('your still logged in bro');
-          controller.loggedIn = true
-
-       }
-    })
-  }
-
-  this.checkIfLoggedIn()
-
-
 
   this.logIn = function(){
     $http({
@@ -230,6 +209,7 @@ app.controller('AuthController',['$http',function($http){
 
       }).then(function(res){
          if(res.data.user){
+            userCity = res.data.user.city
             console.log('your still logged in bro');
             controller.loggedIn = true;
             controller.username = res.data.user.username
