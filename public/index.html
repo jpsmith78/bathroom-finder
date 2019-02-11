@@ -16,35 +16,39 @@
           <!-- auth stuff here -->
 
           <div class="nav-bar">
-            <h1>Bathroom Finder</h1>
-            <div ng-include="ctrl.includePath" class="home-text">
 
+            <div class="navHeader">
+              <h1>Bathroom Finder</h1>
             </div>
 
-              <button ng-hide="auth.loggedIn" ng-click = 'auth.showCreateUserForm()'>Create New User</button>
-            <div ng-hide="auth.loggedIn">
+              <div class="logInForms">
 
-              <form ng-if = 'auth.showCreateForm' ng-submit='auth.createUser()'>
+                <button ng-hide="auth.loggedIn" ng-click = 'auth.showCreateUserForm()'>Create New User</button>
+              <div ng-hide="auth.loggedIn">
 
-                <input  type="text" placeholder="username" ng-model='auth.username'>
-                <input type="password" placeholder="password" ng-model='auth.password'>
-                <input type="text" placeholder="current city" ng-model= 'auth.city'>
-                <button type='submit'>create</button>
-              </form>
-            </div>
+                <form ng-if = 'auth.showCreateForm' ng-submit='auth.createUser()'>
+
+                  <input  type="text" placeholder="username" ng-model='auth.username'>
+                  <input type="password" placeholder="password" ng-model='auth.password'>
+                  <input type="text" placeholder="current city" ng-model= 'auth.city'>
+                  <button type='submit'>create</button>
+                </form>
+              </div>
 
 
-              <button ng-hide="auth.loggedIn" ng-click = 'auth.showLoginFormForLogin()'>Login</button>
-              <div ng-hide="auth.loggedIn" class="logInForm">
-              <form ng-if = 'auth.showLoginForm'  ng-submit='auth.logIn()'>
-                <input type="text" placeholder="username" ng-model='auth.username'>
-                <input type="password" placeholder="password" ng-model='auth.password'>
-                <button type='submit'>Login to app</button>
-              </form>
-            </div>
-            <div ng-if='auth.loggedIn' class="logout">
-              <button ng-click='auth.logout()'>log out</button>
-            </div>
+                <button ng-hide="auth.loggedIn" ng-click = 'auth.showLoginFormForLogin()'>Login</button>
+                <div ng-hide="auth.loggedIn" class="logInForm">
+                <form ng-if = 'auth.showLoginForm'  ng-submit='auth.logIn()'>
+                  <input type="text" placeholder="username" ng-model='auth.username'>
+                  <input type="password" placeholder="password" ng-model='auth.password'>
+                  <button type='submit'>Login to app</button>
+                </form>
+              </div>
+              <div ng-if='auth.loggedIn' class="logout">
+                <button ng-click='auth.logout()'>log out</button>
+              </div>
+              </div>
+            <div ng-include="ctrl.includePath" class="home-text"></div>
           </div>
 
 

@@ -51,15 +51,13 @@ ul {
   margin-top: 80px;
   background: #8fb9cf;
   display: inline-block;
-
+  color: white;
   /* opacity: .6; */
 }
 
 .sidebar > h2 {
   text-decoration: underline;
-  font-size:
-
-
+  padding-bottom: 10px;
 }
 
 .content {
@@ -96,8 +94,10 @@ ul {
 .home-text {
   text-align: center;
   margin-top: 0%;
-  border-top: 1px solid white;
   border-bottom: 1px solid white;
+  width: 25%;
+  margin: 0 auto;
+  margin-bottom: 3%;
 }
 
 .main {
@@ -130,5 +130,19 @@ input[type=checkbox]{
 
 .home-text > h3 {
   font-size: 15px;
+  color: white;
+}
+
+.logInForms {
+  text-align: right;
+  display: inline-block;
+  float: right;
+  padding: 1%;
+}
+
+.navHeader {
+  width: 40%;
+  display: inline-block;
+  padding: 1%;
   color: white;
 }
