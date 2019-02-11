@@ -2,8 +2,9 @@
 
 const bathroomLocations = []
 const bathroomLocationsInLatAndLong = []
-let mapLocation ={lat: 39.9525839, lng: -75.1652215}
+let mapLocation ={lat: 39.0997265, lng: -94.5785667}
 let userCity
+let mapZoom = 3.5
 
 //delclaring empty array to add locations for markers in
 
@@ -50,6 +51,7 @@ this.includePath = 'partials/'+ path +'.html';
         isClean: this.isClean
       }
     }).then(function(res){
+      location.reload();
       controller.getBathrooms()
     }, function(err){
       console.log(err);
@@ -259,31 +261,38 @@ this.getApiKey()
 this.setMapAsUserCity = () => {
    this.address = userCity
    this.getLocationForPresetCitiesInLatAndLong()
+   mapZoom = 13
 }
 
 this.setMapAsPhiladelphia = () => {
   this.address = 'Philadelphia'
   this.getLocationForPresetCitiesInLatAndLong()
+  mapZoom = 13
 }
 this.setMapAsNewYork = () => {
   this.address = 'new york city manhattan'
   this.getLocationForPresetCitiesInLatAndLong()
+  mapZoom = 13
 }
 this.setMapAsBoston = () => {
   this.address = '02101'
   this.getLocationForPresetCitiesInLatAndLong()
+  mapZoom = 13
 }
 this.setMapAsLosAngles = () => {
   this.address = 'los angeles,Ca'
   this.getLocationForPresetCitiesInLatAndLong()
+  mapZoom = 13
 }
 this.setMapAsDenver = () => {
   this.address = 'denver, co'
   this.getLocationForPresetCitiesInLatAndLong()
+  mapZoom = 13
 }
 this.setMapAsPittsburgh = () => {
   this.address = 'pittsburgh, pa'
   this.getLocationForPresetCitiesInLatAndLong()
+  mapZoom = 13
 }
 
 
@@ -316,7 +325,7 @@ this.getLatAndLongForBathroomLocations = function(){
     }).then(function(res){
 
        bathroomLocationsInLatAndLong.push(res.data.results[0].geometry.location);
-
+       console.log(bathroomLocationsInLatAndLong);
     })
   }
 }
@@ -360,7 +369,7 @@ function initMap() {
     var myLatLng = mapLocation
 
       var map = new google.maps.Map(document.getElementById('maping'), {
-        zoom: 13,
+        zoom: mapZoom,
         center: myLatLng
       });
       // for loop here for locations in log
