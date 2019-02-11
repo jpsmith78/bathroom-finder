@@ -48,7 +48,7 @@
                 <button ng-click='auth.logout()'>log out</button>
               </div>
               </div>
-            <div ng-include="ctrl.includePath" class="home-text"></div>
+            <div ng-include="'partials/headerMessage.html'" class="home-text"></div>
           </div>
 
 
@@ -119,7 +119,9 @@
   </script>
   </div>
 
-  <div class="main">
+  <div ng-include='ctrl.includePath' class='citySelector'>
+
+  </div>
 
 </body>
 
