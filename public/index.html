@@ -42,6 +42,13 @@
             </div>
           </div>
 
+          <div class="main">
+
+
+          <div ng-include="ctrl.includePath" class="home-text">
+
+          </div>
+
 
         <div ng-controller = 'mapsController as map' class="sidebar">
           <h2>Cities</h2>
@@ -106,8 +113,6 @@
   </div>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ4_z4_6m1w4sqpVKUeV5Og4dqPZH7tpU&callback=initMap">
   </script>
-  <div class="content">
-    <div  class="content" ng-include="ctrl.includePath"></div>
   </div>
 </body>
 

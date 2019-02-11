@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   background:
 
 }
@@ -15,6 +14,7 @@ body {
   overflow-x: scroll;
   margin: 30px auto;
 }
+
 ul {
   list-style: none;
   border-bottom: 1px solid gray;
@@ -28,21 +28,23 @@ ul {
   top: 0;
   width: 100%;
   z-index: 999;
-  background: black;
-  opacity: .6;
+  background: #8fb9cf;
+  /* opacity: .6; */
 }
 
  .sidebar {
   background: white;
-  height: 90%;
-  width: 100px;
+  height: 100%;
+  width: 175px;
   position: fixed;
-  z-index: 999;
-  top: 160px;
+  z-index: 998;
   left: 0;
+  top: 0;
   overflow: hidden;
-  padding-top: 20px;
+  padding-top: 200px;
   margin-top: 20px;
+  background: #8fb9cf;
+  /* opacity: .6; */
 }
 
 .sidebar > h2 {
@@ -71,8 +73,19 @@ ul {
 .addInfo {
   width: 100%;
 }
-  .addInfoContent{
+
+.addInfoContent{
     width:75%;
     margin: 0 auto;
     text-align: center;
   }
+
+
+.home-text {
+  text-align: center;
+  margin-top: 125px;
+}
+
+.main {
+
+}
