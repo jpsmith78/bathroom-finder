@@ -131,6 +131,22 @@ this.includePath = 'partials/'+ path +'.html';
 app.controller('AuthController',['$http',function($http){
   const controller = this
   this.loggedIn = false
+  //login form
+  this.showCreateForm = false
+  this.showLoginForm = false
+
+  this.showCreateUserForm = () => {
+    this.showCreateForm = !this.showCreateForm
+
+  }
+
+  this.showLoginFormForLogin = () => {
+    this.showLoginForm = !this.showLoginForm
+  }
+
+
+
+
 
   this.createUser = function(){
     $http({
@@ -145,6 +161,9 @@ app.controller('AuthController',['$http',function($http){
       console.log(res);
       controller.username = ''
       controller.password = ''
+      controller.city = ''
+      controller.showCreateForm = false
+      controller.showLoginForm = true
     },function(er){
       console.log(er);
     })
@@ -231,6 +250,11 @@ this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 this.address = ""
 this.apiKey =
 this.location =
+
+
+
+
+
 
 //getting apiKey
 
