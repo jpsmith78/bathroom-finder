@@ -1,15 +1,18 @@
 <h1>Add Info</h1>
 <form ng-show="auth.loggedIn" ng-submit="ctrl.createBathroom()">
   <input type="text" ng-model="ctrl.name" placeholder="name">
+  <input ng-model = 'ctrl.location' type="search" id="address-input" placeholder="Where are we going?" />
+
+
   <!-- <input type="text" ng-model="ctrl.location" placeholder="location"> -->
-  <select ng-model="ctrl.location" placeholder="location">
+  <!-- <select ng-model="ctrl.location" placeholder="location">
     <option value="Denver">Denver</option>
     <option value="Philidelphia">Philidelphia</option>
     <option value="New York">New York</option>
     <option value="Boston">Boston</option>
     <option value="Pittsburgh">Pittsburgh</option>
     <option value="Los Angeles">Los Angeles</option>
-  </select>
+  </select> -->
   Purchase Required?<input ng-model="ctrl.haveToPurchase" type="checkbox">
 
   Is it Awkward?<input ng-model="ctrl.isAwkward" type="checkbox">
