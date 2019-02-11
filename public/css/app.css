@@ -67,3 +67,12 @@ ul {
   text-align: center;
   padding-top: 100px;
 }
+
+.addInfo {
+  width: 100%;
+}
+  .addInfoContent{
+    width:75%;
+    margin: 0 auto;
+    text-align: center;
+  }

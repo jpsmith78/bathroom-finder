@@ -74,6 +74,8 @@ this.includePath = 'partials/'+ path +'.html';
 
 
 
+
+
     }, function(err){
       console.log(err);
     });
@@ -368,3 +370,12 @@ function initMap() {
 
 
 }
+
+
+//search box //this is a free api key
+
+setTimeout(function(){ var placesAutocomplete = places({
+   appId: 'plRDWJAWD3QD',
+   apiKey: 'bbda1e3cb58b537bb9d186e3ffc95e0c',
+   container: document.querySelector('#address-input')
+ }); }, 3000);
