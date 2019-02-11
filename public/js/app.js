@@ -230,7 +230,7 @@ const controller = this
 this.baseURL = "https://maps.googleapis.com/maps/api/geocode/json?";
 this.address = ""
 this.apiKey =
-this.location = 'United States'
+this.location =
 
 //getting apiKey
 
@@ -316,6 +316,9 @@ this.getLatAndLongForBathroomLocations = function(){
 }
 this.getLatAndLongForBathroomLocations()
 }, 2000)
+
+
+
 // check if bathroom lat and long made it to array
 // setTimeout(function(){
 //   console.log(bathroomLocationsInLatAndLong);
@@ -356,7 +359,7 @@ function initMap() {
       var myLatLng = mapLocation
 
       var map = new google.maps.Map(document.getElementById('maping'), {
-        zoom: 15,
+        zoom: 13,
         center: myLatLng
       });
       // for loop here for locations in log
