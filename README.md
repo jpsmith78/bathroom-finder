@@ -16,27 +16,27 @@ Once the basic crud app was working, we built in the login functionality and ref
 After the map api and the basic functionality was in place, Brendan styled the page using bootstrap.  Toward the end, when there was really only one file to work on, we collaborated over video chat with one person inputing the changes that we all made.
 
 ### User Stories
-The user should be able to register and log in
-The user should see a list of bathrooms available in their city
-The user should see all available bathrooms form the list on a map
-When logged in, the user can easily be taken back to their home city on the map by clicking "home"
-When logged in, the user should be able to add entries to the bathroom list
-When logged in, the user should be able to edit and delete bathroom entries
-The user should be able to see and update if they need to make a purchase or if the bathroom is clean
+1. The user should be able to register and log in
+2. The user should see a list of bathrooms available in their city
+3. The user should see all available bathrooms form the list on a map
+4. When logged in, the user can easily be taken back to their home city on the map by clicking "home"
+5. When logged in, the user should be able to add entries to the bathroom list
+6. When logged in, the user should be able to edit and delete bathroom entries
+7. The user should be able to see and update if they need to make a purchase or if the bathroom is clean
 
 ### Wins
-Getting the google map api working the way we wanted was nothing short of a miracle
-We were able to filter results by city so that when you're in Boston, you only see Boston bathrooms on your list
-We were able to leverage the bootstrap framework to add some great styling to the page
+1. Getting the google map api working the way we wanted was nothing short of a miracle
+2. We were able to filter results by city so that when you're in Boston, you only see Boston bathrooms on your list
+3. We were able to leverage the bootstrap framework to add some great styling to the page
 
 
 
 ### Unsolved Problems
 
-We were hoping to get the 'is clean' selection to be a five star rating rather than a boolean, but it didn't feel absolutely necessary toward the end of the project
-When a user adds a bathroom, to see that change the page must be reloaded. This is not great from the UX perspective
+1. We were hoping to get the 'is clean' selection to be a five star rating rather than a boolean, but it didn't feel absolutely necessary toward the end of the project
+2. When a user adds a bathroom, to see that change the page must be reloaded. This is not great from the UX perspective
 
 
 ### Future goals for the project 
 
-When hovering over the bathroom marker on the map, the user should see the address and all information about that particular bathroom. 
+1. When hovering over the bathroom marker on the map, the user should see the address and all information about that particular bathroom
