@@ -4,7 +4,7 @@
 [link to live app](https://shtr.herokuapp.com/)
 
 ### Technologies and Frameworks Used
-HTML, CSS, JavaScript, Git, Mongo, AngularJs, bcrypt, dotenv express, express-sessions, mongoose, bootstrap
+HTML, CSS, JavaScript, Git, Mongo, AngularJs, bcrypt, dotenv express, express-sessions, mongoose, bootstrap, Google Maps static maps and geolocation APIs
 
 ### Approach Taken
 We created a Trello board to divide up the tasks amongst us and to keep track of what was pushed to the repository and when.  We were also in pretty much constant contact throughout the course of the project to try to keep the git conflicts to a minimum.
