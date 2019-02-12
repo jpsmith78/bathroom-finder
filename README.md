@@ -1,5 +1,5 @@
 # sht.r
-##relief is right around the corner
+## relief is right around the corner
 
 [link to live app](https://bthrm-fnder.herokuapp.com/)
 
