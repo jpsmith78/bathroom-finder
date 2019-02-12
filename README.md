@@ -1,7 +1,7 @@
 # sht.r
 ## relief is right around the corner
 
-[link to live app](https://bthrm-fnder.herokuapp.com/)
+[link to live app](https://shtr.herokuapp.com/)
 
 ### Technologies and Frameworks Used
 HTML, CSS, JavaScript, Git, Mongo, AngularJs, bcrypt, dotenv express, express-sessions, mongoose, bootstrap
