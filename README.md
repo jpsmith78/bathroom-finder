@@ -37,6 +37,6 @@ We were hoping to get the 'is clean' selection to be a five star rating rather t
 When a user adds a bathroom, to see that change the page must be reloaded. This is not great from the UX perspective
 
 
-### Future ideas for the project 
+### Future goals for the project 
 
 When hovering over the bathroom marker on the map, the user should see the address and all information about that particular bathroom. 
