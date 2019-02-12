@@ -1,6 +1,13 @@
-html,
-body {
-  background:
+/* *{
+  border: 1px solid red
+} */
+.btn{
+  margin-bottom: 5px;
+}
+html, body {
+
+
+font-family: 'Fjalla One', sans-serif;
 
 }
 #modal {
@@ -15,6 +22,7 @@ body {
   overflow-x: scroll;
   margin: 30px auto;
 }
+
 ul {
   list-style: none;
   border-bottom: 1px solid gray;
@@ -28,31 +36,54 @@ ul {
   top: 0;
   width: 100%;
   z-index: 999;
-  background: black;
-  opacity: .6;
+  background: #8fb9cf;
+  /* opacity: .6; */
 }
 
  .sidebar {
   background: white;
-  height: 90%;
-  width: 100px;
+  height: 100%;
+  width: 15%;
   position: fixed;
-  z-index: 999;
-  top: 160px;
+  z-index: 998;
   left: 0;
+  top: 0;
   overflow: hidden;
-  padding-top: 20px;
-  margin-top: 20px;
+  padding-top: 100px;
+  margin-top: 100px;
+  background: #8fb9cf;
+  display: inline-block;
+  color: white;
+  padding-left: 10px;
+  text-align: center;
+  /* opacity: .6; */
 }
 
 .sidebar > h2 {
   text-decoration: underline;
+  padding-bottom: 10px;
+
+}
+.btn > h3 {
+  font-size: 20px;
+
+
+}
+
+
+.sidebarFix {
+  width: 89%;
+  height: 32px;
+  padding-bottom: 0px;
+  padding-top: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
 
 }
 
 .content {
   text-align: center;
-  margin-top: 150px;
+  margin-top: 40px;
 }
 
 .nav-bar > h1 {
@@ -69,10 +100,88 @@ ul {
 }
 
 .addInfo {
-  width: 100%;
+  width: 50%;
+  margin-left: 25%;
 }
-  .addInfoContent{
-    width:75%;
-    margin: 0 auto;
+
+.addInfoContent{
+    width:100%;
+    margin: 40% auto;
+    margin-bottom: 2%;
     text-align: center;
   }
+
+
+.home-text {
+  text-align: center;
+  margin-top: 0%;
+  border-bottom: 1px solid white;
+  width: 25%;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+
+.main {
+  width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+.addName{
+  margin-bottom: 2%;
+}
+#address-input{
+  margin-bottom: 2%;
+}
+
+input[type=checkbox]{
+  margin: 0 10px;
+}
+
+.createButton {
+  display: block;
+  margin: 5% auto;
+
+}
+
+.home-text > h1 {
+  font-size: 25px;
+  color: white;
+}
+
+.home-text > h3 {
+  font-size: 15px;
+  color: white;
+}
+
+.logInForms {
+  text-align: right;
+  display: inline-block;
+  float: right;
+  padding: 1%;
+}
+
+.navHeader {
+  width: 40%;
+  display: inline-block;
+  padding: 1%;
+  color: white;
+}
+
+.citySelector > h1 {
+  text-align: center;
+}
+
+.mainHeading{
+  font-size: 45px;
+}
+.navHeader >h6,h1 {
+
+  display: inline;
+}
+.addName {
+  padding: 8px;
+  border: 1px solid #cccccc;
+  text-align: center;
+  border-radius: 2px
+}
