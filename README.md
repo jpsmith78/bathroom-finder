@@ -19,17 +19,24 @@ After the map api and the basic functionality was in place, Brendan styled the p
 The user should be able to register and log in
 The user should see a list of bathrooms available in their city
 The user should see all available bathrooms form the list on a map
+When logged in, the user can easily be taken back to their home city on the map by clicking "home"
 When logged in, the user should be able to add entries to the bathroom list
 When logged in, the user should be able to edit and delete bathroom entries
 The user should be able to see and update if they need to make a purchase or if the bathroom is clean
 
 ### Wins
 Getting the google map api working the way we wanted was nothing short of a miracle
-
 We were able to filter results by city so that when you're in Boston, you only see Boston bathrooms on your list
-
 We were able to leverage the bootstrap framework to add some great styling to the page
+
+
 
 ### Unsolved Problems
 
 We were hoping to get the 'is clean' selection to be a five star rating rather than a boolean, but it didn't feel absolutely necessary toward the end of the project
+When a user adds a bathroom, to see that change the page must be reloaded. This is not great from the UX perspective
+
+
+### Future ideas for the project 
+
+When hovering over the bathroom marker on the map, the user should see the address and all information about that particular bathroom. 
