@@ -1,20 +1,9 @@
-/* *{
-  border: 1px solid red
-} */
-body {
-  background: yellow;
-}
+
 .btn{
   margin-bottom: 5px;
 }
 html, body {
-
-
 font-family: 'Fjalla One', sans-serif;
-
-}
-#modal {
-  display: none;
 }
 .scroll {
   border: 2px solid gray;
