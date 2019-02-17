@@ -1,6 +1,9 @@
 /* *{
   border: 1px solid red
 } */
+body {
+  background: yellow;
+}
 .btn{
   margin-bottom: 5px;
 }
