@@ -1,7 +1,7 @@
 # crpp.r
 ## relief is right around the corner
 
-[link to live app](https://crpp.r.herokuapp.com/)
+[link to live app](https://crppr.herokuapp.com/)
 
 ### Functionality
 Once on the landing page, you should be able to see any bathrooms listed in the cities. If you create an account and login, you will be able to input new bathrooms into any city, and also should now be able to see the edit and delete buttons for each bathroom. The map will place an emoji on any location that you enter into the submit form. When you click on any of the cities in the sidebar it will change the content loaded on the page to the city that you clicked on with a submit form, a map, and a list of all of the bathrooms in that city.
