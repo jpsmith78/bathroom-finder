@@ -129,13 +129,17 @@ this.includePath = 'partials/'+ path +'.html';
 
 }]);
 
+
 // authController
 app.controller('AuthController',['$http',function($http){
   const controller = this
-  this.loggedIn = false
+  this.loggedIn = false;
   //login form
-  this.showCreateForm = false
-  this.showLoginForm = false
+  this.showCreateForm = false;
+  this.showLoginForm = false;
+  this.loginFailModal = false;
+  this.passwordFailModal = false;
+  this.usernameFailModal = false;
 
   this.showCreateUserForm = () => {
     this.showCreateForm = !this.showCreateForm
@@ -146,7 +150,17 @@ app.controller('AuthController',['$http',function($http){
     this.showLoginForm = !this.showLoginForm
   }
 
+  this.loginFailModalFunction = () => {
+    this.loginFailModal = !this.loginFailModal;
+  };
 
+  this.passwordFailModalFunction = () => {
+    this.passwordFailModal = !this.passwordFailModal;
+  };
+
+  this.usernameFailModalFunction = () => {
+    this.usernameFailModal = !this.usernameFailModal;
+  };
 
 
 
@@ -166,8 +180,19 @@ app.controller('AuthController',['$http',function($http){
       controller.city = ''
       controller.showCreateForm = false
       controller.showLoginForm = true
-    },function(er){
-      console.log(er);
+    },function(err){
+      console.log(err);
+      if(err.status === 400){
+        controller.passwordFailModalFunction();
+        controller.username = ''
+        controller.password = ''
+        controller.city = ''
+      }else if(err.status === 401){
+        controller.usernameFailModalFunction();
+        controller.username = ''
+        controller.password = ''
+        controller.city = ''
+      }
     })
   }
 
@@ -184,12 +209,15 @@ app.controller('AuthController',['$http',function($http){
       userCity = res.data.city.user.city
 
       controller.loggedIn = true;
-      controller.username= ''
-      controller.password= ''
-      controller.checkIfLoggedIn()
+      controller.username= '';
+      controller.password= '';
+      controller.checkIfLoggedIn();
 
     },function(err){
       console.log(err);
+      controller.loginFailModalFunction();
+      controller.username= '';
+      controller.password= '';
     })
   }
 
