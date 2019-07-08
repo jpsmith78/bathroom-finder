@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 
 const userSchema = Schema({
-username: {type:String, unique:true},
-password: {type:String},
-city: {type:String},
+username: {type:String, unique:true, required:true},
+password: {type:String, required:true},
+city: {type:String, required:true}
 })
 
 

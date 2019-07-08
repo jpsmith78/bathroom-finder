@@ -1,9 +1,9 @@
-
-.btn{
-  margin-bottom: 5px;
-}
-html, body {
+* {
 font-family: 'Fjalla One', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 .scroll {
   border: 2px solid gray;
@@ -40,7 +40,7 @@ ul {
   z-index: 998;
   left: 0;
   top: 0;
-  overflow: hidden;
+  overflow-x: scroll;
   padding-top: 100px;
   margin-top: 100px;
   background: #8fb9cf;
@@ -56,12 +56,12 @@ ul {
   padding-bottom: 10px;
 
 }
+.btn{
+  margin-bottom: 5px;
+}
 .btn > h3 {
   font-size: 20px;
-
-
 }
-
 
 .sidebarFix {
   width: 89%;
@@ -92,17 +92,15 @@ ul {
 }
 
 .addInfo {
-  width: 50%;
+  width: 60%;
   margin-left: 25%;
 }
-
 .addInfoContent{
     width:100%;
-    margin: 40% auto;
+    margin: 250px auto;
     margin-bottom: 2%;
     text-align: center;
   }
-
 
 .home-text {
   text-align: center;
@@ -154,6 +152,8 @@ input[type=checkbox]{
 }
 
 .navHeader {
+  display: flex;
+  flex-wrap: nowrap;
   width: 40%;
   display: inline-block;
   padding: 1%;
@@ -176,4 +176,106 @@ input[type=checkbox]{
   border: 1px solid #cccccc;
   text-align: center;
   border-radius: 2px
+}
+.map {
+  width: 90%;
+  margin-left: 10%;
+}
+#maping {
+  height: 500px;
+  width: 500px;
+  margin: 5% auto;
+}
+.cityInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin-left: 10%;
+}
+/* ===========================
+<<<<<<<<MODAL>>>>>>>>>>>>>>
+=========================== */
+.pop-up-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3000px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0,0,0,.5);
+
+}
+.pop-up-message {
+  width: 300px;
+  height: 300px;
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 200px;
+  border-radius: 5px;
+}
+/* ===========================
+<<<<<<MEDIA QUERIES>>>>>>>>>>
+=========================== */
+@media (max-width: 750px){
+  .pop-up-message {
+    margin-top: 50px;
+  }
+  #maping {
+    height: 400px;
+    width: 400px;
+  }
+  .sidebarFix > h3 {
+    font-size: 12px;
+  }
+  .sidebar {
+    padding-top: 150px;
+    padding-bottom: 200px;
+    margin-top: 95px;
+  }
+  .navHeader > h1 {
+    display: block;
+    width: 100%;
+  }
+  .scroll {
+    width: 70%;
+  }
+
+}
+@media (max-width: 570px){
+  .pop-up-message {
+    margin-top: 200px;
+  }
+  .addInfo {
+    margin-left: 35%;
+  }
+  #maping {
+    height: 300px;
+    width: 300px;
+  }
+  .map {
+    margin-left: 20%;
+  }
+  .sidebar {
+    width: 20%;
+
+  }
+  .sidebar > h2 {
+    font-size: 22px;
+  }
+  .sidebarFix > h3 {
+    font-size: 10px;
+  }
+  .cityInfo {
+    margin-left: 20%;
+  }
 }

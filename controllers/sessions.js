@@ -17,9 +17,9 @@ router.delete('/', (req, res)=>{
 
 router.post('/', (req, res)=>{
     User.findOne({username:req.body.username}, (err, foundUser)=>{
+      if (foundUser) {
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
-            req.session.user = foundUser
-
+            req.session.user = foundUser;
             console.log('you logged in')
             res.status(201).json({
               status:201,
@@ -27,12 +27,17 @@ router.post('/', (req, res)=>{
               city: req.session
             });
         } else {
-            console.log('wrong password');
             res.status(401).json({
               status: 401,
               message: 'unauthorized'
             });
         }
+      }else{
+        res.status(401).json({
+          status: 401,
+          message: 'login failed!'
+        });
+      }
     })
 })
 

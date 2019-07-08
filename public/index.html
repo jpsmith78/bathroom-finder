@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr" ng-app="BathroomApp">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" charset="utf-8"></script>
   <script src="/js/app.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/npm/places.js@1.15.5"></script>
@@ -11,8 +12,39 @@
   <meta charset="utf-8">
   <title>Crpp.r</title>
 </head>
+
 <body ng-controller="BathroomController as ctrl">
   <div ng-controller="AuthController as auth">
+    <!-- ======================
+    <<<<<<<<< MODALS>>>>>>>>
+    =========================== -->
+    <!-- ======================
+    <<<<<<LOGIN FAIL MODAL>>>>>
+    =========================== -->
+    <div class="pop-up-background" ng-if="auth.loginFailModal">
+      <div class="pop-up-message" >
+        <h3>Login failed. Try again.</h3>
+          <button class="btn btn-outline-dark" ng-click="auth.loginFailModalFunction()" >OK</button>
+      </div>
+    </div>
+    <!-- ======================
+    <<<<<<PASSWORD FAIL MODAL>>>>>
+    =========================== -->
+    <div class="pop-up-background" ng-if="auth.passwordFailModal">
+        <div class="pop-up-message" >
+          <h3>Username and password must both be filled. Try again.</h3>
+            <button class="btn btn-outline-dark" ng-click="auth.passwordFailModalFunction()">OK</button>
+        </div>
+      </div>
+    <!-- ======================
+    <<<<<<USERNAME FAIL MODAL>>>>>
+    =========================== -->
+    <div class="pop-up-background" ng-if="auth.usernameFailModal">
+        <div class="pop-up-message" >
+          <h3>Username already taken. Try again.</h3>
+            <button class="btn btn-outline-dark" ng-click="auth.usernameFailModalFunction()">OK</button>
+        </div>
+      </div>
     <!-- auth stuff here -->
     <div class="nav-bar">
       <div class="navHeader">
@@ -66,13 +98,6 @@
 
   <!-- controller stops here -->
   <div ng-controller="mapsController as map">
-    <style>
-      #maping {
-        height: 500px;
-        width: 500px;
-        margin: 5% auto;
-      }
-    </style>
     <div class="map">
       <div id="maping"> </div>
     </div>
@@ -81,7 +106,7 @@
   </script>
   </div>
 
-  <div ng-controller = 'AuthController as auth'ng-include='ctrl.includePath' class='citySelector content'>
+  <div class="cityInfo" ng-controller = 'AuthController as auth' ng-include='ctrl.includePath' class='citySelector content'>
 
   </div>
 </body>
